@@ -3,11 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finanzas I - Plataforma Educativa Premium</title>
+    <title>Finanzas I - Plataforma Educativa Premium | FASE 2</title>
     <style>
-        /* ============================================
-           VARIABLES Y TEMA
-           ============================================ */
         :root {
             --primary: #00c896;
             --primary-dark: #00a876;
@@ -16,26 +13,21 @@
             --danger: #ff6b6b;
             --success: #00c896;
             --warning: #ffd93d;
-            
             --bg-dark: #0a0e1a;
             --bg-darker: #05070f;
             --surface: #111828;
             --surface-light: #1a2235;
             --border: #1e2d45;
             --border-light: #2a3a55;
-            
             --text-primary: #e8edf5;
             --text-secondary: #8a9bb5;
             --text-tertiary: #5a6a82;
-            
             --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
             --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
             --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.5);
-            
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* Tema Claro */
         [data-theme="light"] {
             --bg-dark: #f8f9fa;
             --bg-darker: #ffffff;
@@ -43,45 +35,28 @@
             --surface-light: #f0f2f5;
             --border: #e0e3e8;
             --border-light: #d0d5db;
-            
             --text-primary: #1a202c;
             --text-secondary: #4a5568;
             --text-tertiary: #718096;
         }
 
-        /* ============================================
-           RESET Y BASE
-           ============================================ */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
+        html { scroll-behavior: smooth; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
             background: var(--bg-dark);
             color: var(--text-primary);
             line-height: 1.6;
             overflow-x: hidden;
         }
 
-        /* ============================================
-           LAYOUT PRINCIPAL
-           ============================================ */
-        .app-container {
-            display: flex;
-            min-height: 100vh;
-            background: var(--bg-dark);
-        }
+        .app-container { display: flex; min-height: 100vh; background: var(--bg-dark); }
 
-        /* ============================================
-           SIDEBAR
-           ============================================ */
         .sidebar {
             width: 300px;
             background: var(--surface);
@@ -100,21 +75,10 @@
             color: white;
         }
 
-        .sidebar-header h1 {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 6px;
-        }
+        .sidebar-header h1 { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+        .sidebar-header p { font-size: 12px; opacity: 0.9; }
 
-        .sidebar-header p {
-            font-size: 12px;
-            opacity: 0.9;
-        }
-
-        .sidebar-nav {
-            padding: 16px 0;
-        }
-
+        .sidebar-nav { padding: 16px 0; }
         .nav-section {
             padding: 12px 16px;
             font-size: 11px;
@@ -136,11 +100,7 @@
             border-left: 3px solid transparent;
         }
 
-        .nav-item:hover {
-            background: var(--surface-light);
-            color: var(--text-primary);
-        }
-
+        .nav-item:hover { background: var(--surface-light); color: var(--text-primary); }
         .nav-item.active {
             background: var(--surface-light);
             color: var(--primary);
@@ -148,14 +108,8 @@
             font-weight: 600;
         }
 
-        .nav-icon {
-            font-size: 18px;
-            min-width: 20px;
-        }
+        .nav-icon { font-size: 18px; min-width: 20px; }
 
-        /* ============================================
-           MAIN CONTENT
-           ============================================ */
         .main-content {
             margin-left: 300px;
             flex: 1;
@@ -163,9 +117,6 @@
             flex-direction: column;
         }
 
-        /* ============================================
-           HEADER TOP
-           ============================================ */
         .top-header {
             background: var(--surface);
             border-bottom: 1px solid var(--border);
@@ -176,13 +127,7 @@
             gap: 20px;
         }
 
-        .header-left {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            flex: 1;
-        }
-
+        .header-left { display: flex; align-items: center; gap: 16px; flex: 1; }
         .search-box {
             flex: 1;
             max-width: 400px;
@@ -201,33 +146,10 @@
             box-shadow: 0 0 0 3px rgba(0, 200, 150, 0.1);
         }
 
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .progress-indicator {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 13px;
-        }
-
-        .progress-bar {
-            width: 80px;
-            height: 4px;
-            background: var(--surface-light);
-            border-radius: 2px;
-            overflow: hidden;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--primary), var(--secondary));
-            width: 35%;
-            transition: var(--transition);
-        }
+        .header-right { display: flex; align-items: center; gap: 20px; }
+        .progress-indicator { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+        .progress-bar { width: 80px; height: 4px; background: var(--surface-light); border-radius: 2px; overflow: hidden; }
+        .progress-fill { height: 100%; background: linear-gradient(90deg, var(--primary), var(--secondary)); width: 35%; transition: var(--transition); }
 
         .btn-icon {
             width: 40px;
@@ -244,41 +166,18 @@
             color: var(--text-primary);
         }
 
-        .btn-icon:hover {
-            background: var(--border);
-        }
+        .btn-icon:hover { background: var(--border); }
 
-        /* ============================================
-           CONTENT AREA
-           ============================================ */
         .content {
             flex: 1;
             overflow-y: auto;
             padding: 28px;
         }
 
-        /* ============================================
-           DASHBOARD
-           ============================================ */
-        .dashboard {
-            display: grid;
-            gap: 24px;
-        }
-
-        .dashboard-header {
-            margin-bottom: 28px;
-        }
-
-        .dashboard-header h1 {
-            font-size: 32px;
-            font-weight: 700;
-            margin-bottom: 6px;
-        }
-
-        .dashboard-header p {
-            color: var(--text-secondary);
-            font-size: 16px;
-        }
+        .dashboard { display: grid; gap: 24px; }
+        .dashboard-header { margin-bottom: 28px; }
+        .dashboard-header h1 { font-size: 32px; font-weight: 700; margin-bottom: 6px; }
+        .dashboard-header p { color: var(--text-secondary); font-size: 16px; }
 
         .stats-grid {
             display: grid;
@@ -300,23 +199,9 @@
             box-shadow: var(--shadow-md);
         }
 
-        .stat-value {
-            font-size: 32px;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 8px;
-        }
-
-        .stat-label {
-            font-size: 13px;
-            color: var(--text-secondary);
-            font-weight: 500;
-        }
-
-        .stat-icon {
-            font-size: 28px;
-            margin-bottom: 12px;
-        }
+        .stat-value { font-size: 32px; font-weight: 700; color: var(--primary); margin-bottom: 8px; }
+        .stat-label { font-size: 13px; color: var(--text-secondary); font-weight: 500; }
+        .stat-icon { font-size: 28px; margin-bottom: 12px; }
 
         .progress-section {
             background: var(--surface);
@@ -326,15 +211,8 @@
             margin-bottom: 24px;
         }
 
-        .progress-section h2 {
-            font-size: 18px;
-            margin-bottom: 16px;
-        }
-
-        .progress-item {
-            margin-bottom: 16px;
-        }
-
+        .progress-section h2 { font-size: 18px; margin-bottom: 16px; }
+        .progress-item { margin-bottom: 16px; }
         .progress-label {
             display: flex;
             justify-content: space-between;
@@ -356,9 +234,6 @@
             transition: var(--transition);
         }
 
-        /* ============================================
-           LEARNING SECTION
-           ============================================ */
         .learning-section {
             background: var(--surface);
             border: 1px solid var(--border);
@@ -366,10 +241,7 @@
             padding: 24px;
         }
 
-        .learning-section h2 {
-            font-size: 18px;
-            margin-bottom: 20px;
-        }
+        .learning-section h2 { font-size: 18px; margin-bottom: 20px; }
 
         .units-grid {
             display: grid;
@@ -392,45 +264,13 @@
             box-shadow: var(--shadow-md);
         }
 
-        .unit-number {
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--primary);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
-        }
+        .unit-number { font-size: 12px; font-weight: 600; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+        .unit-title { font-size: 16px; font-weight: 600; margin-bottom: 10px; }
+        .unit-desc { font-size: 13px; color: var(--text-secondary); margin-bottom: 16px; line-height: 1.5; }
+        .unit-meta { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-tertiary); }
 
-        .unit-title {
-            font-size: 16px;
-            font-weight: 600;
-            margin-bottom: 10px;
-        }
-
-        .unit-desc {
-            font-size: 13px;
-            color: var(--text-secondary);
-            margin-bottom: 16px;
-            line-height: 1.5;
-        }
-
-        .unit-meta {
-            display: flex;
-            justify-content: space-between;
-            font-size: 12px;
-            color: var(--text-tertiary);
-        }
-
-        /* ============================================
-           UNIT DETAIL VIEW
-           ============================================ */
-        .unit-detail {
-            display: none;
-        }
-
-        .unit-detail.active {
-            display: block;
-        }
+        .unit-detail { display: none; }
+        .unit-detail.active { display: block; }
 
         .unit-header {
             margin-bottom: 28px;
@@ -438,20 +278,10 @@
             border-bottom: 2px solid var(--border);
         }
 
-        .unit-header h1 {
-            font-size: 28px;
-            margin-bottom: 8px;
-        }
+        .unit-header h1 { font-size: 28px; margin-bottom: 8px; }
+        .unit-header p { color: var(--text-secondary); font-size: 16px; }
 
-        .unit-header p {
-            color: var(--text-secondary);
-            font-size: 16px;
-        }
-
-        .topics-container {
-            display: grid;
-            gap: 12px;
-        }
+        .topics-container { display: grid; gap: 12px; }
 
         .topic-item {
             background: var(--surface);
@@ -470,24 +300,10 @@
             user-select: none;
         }
 
-        .topic-header:hover {
-            background: var(--surface-light);
-        }
-
-        .topic-title {
-            font-weight: 600;
-            font-size: 15px;
-        }
-
-        .topic-toggle {
-            font-size: 18px;
-            transition: var(--transition);
-            color: var(--text-secondary);
-        }
-
-        .topic-item.open .topic-toggle {
-            transform: rotate(180deg);
-        }
+        .topic-header:hover { background: var(--surface-light); }
+        .topic-title { font-weight: 600; font-size: 15px; }
+        .topic-toggle { font-size: 18px; transition: var(--transition); color: var(--text-secondary); }
+        .topic-item.open .topic-toggle { transform: rotate(180deg); }
 
         .topic-content {
             max-height: 0;
@@ -497,24 +313,95 @@
             border-top: 1px solid var(--border);
         }
 
-        .topic-item.open .topic-content {
-            max-height: 2000px;
-        }
+        .topic-item.open .topic-content { max-height: 5000px; }
 
         .topic-body {
             padding: 20px;
         }
 
-        .topic-body h3 {
-            font-size: 16px;
-            margin-bottom: 12px;
-            color: var(--primary);
+        .topic-body h3 { font-size: 16px; margin-bottom: 12px; color: var(--primary); }
+        .topic-body p { margin-bottom: 12px; line-height: 1.7; color: var(--text-secondary); }
+        .topic-body ul { margin-left: 20px; margin-bottom: 12px; }
+        .topic-body li { margin-bottom: 8px; color: var(--text-secondary); }
+
+        .formula-box {
+            background: var(--bg-dark);
+            border-left: 4px solid var(--primary);
+            padding: 16px;
+            border-radius: 8px;
+            margin: 16px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
         }
 
-        .topic-body p {
+        .example-box {
+            background: rgba(0, 200, 150, 0.1);
+            border-left: 4px solid var(--primary);
+            padding: 16px;
+            border-radius: 8px;
+            margin: 16px 0;
+        }
+
+        .example-box strong { color: var(--primary); }
+
+        .case-box {
+            background: rgba(91, 141, 238, 0.1);
+            border-left: 4px solid var(--secondary);
+            padding: 16px;
+            border-radius: 8px;
+            margin: 16px 0;
+        }
+
+        .calculator-container {
+            background: var(--surface-light);
+            border: 1px solid var(--border);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .calc-input {
             margin-bottom: 12px;
-            line-height: 1.7;
+        }
+
+        .calc-input label {
+            display: block;
+            margin-bottom: 6px;
+            font-size: 13px;
+            font-weight: 600;
             color: var(--text-secondary);
+        }
+
+        .calc-input input {
+            width: 100%;
+            padding: 10px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-primary);
+            font-size: 14px;
+        }
+
+        .calc-input input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 200, 150, 0.1);
+        }
+
+        .calc-result {
+            background: var(--surface);
+            border: 2px solid var(--primary);
+            padding: 16px;
+            border-radius: 8px;
+            margin-top: 16px;
+            text-align: center;
+        }
+
+        .calc-result-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 10px 0;
         }
 
         .btn-primary {
@@ -536,9 +423,24 @@
             box-shadow: var(--shadow-md);
         }
 
-        /* ============================================
-           BACK BUTTON
-           ============================================ */
+        .btn-small {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 13px;
+            transition: var(--transition);
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        .btn-small:hover {
+            background: #4a7fd9;
+        }
+
         .back-button {
             display: flex;
             align-items: center;
@@ -551,23 +453,15 @@
             transition: var(--transition);
         }
 
-        .back-button:hover {
-            gap: 12px;
-        }
+        .back-button:hover { gap: 12px; }
 
-        /* ============================================
-           THEME TOGGLE
-           ============================================ */
         .theme-toggle {
             position: relative;
             width: 50px;
             height: 28px;
         }
 
-        .theme-toggle input {
-            display: none;
-        }
-
+        .theme-toggle input { display: none; }
         .theme-label {
             display: block;
             width: 100%;
@@ -592,88 +486,58 @@
             transition: var(--transition);
         }
 
-        .theme-toggle input:checked + .theme-label {
-            background: var(--primary);
+        .theme-toggle input:checked + .theme-label { background: var(--primary); }
+        .theme-toggle input:checked + .theme-label::after { left: 24px; }
+
+        .view { display: none; }
+        .view.active { display: block; }
+
+        .table-responsive {
+            overflow-x: auto;
+            margin: 16px 0;
         }
 
-        .theme-toggle input:checked + .theme-label::after {
-            left: 24px;
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--surface-light);
         }
 
-        /* ============================================
-           RESPONSIVO
-           ============================================ */
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            background: var(--surface);
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        tr:hover { background: var(--surface); }
+
         @media (max-width: 768px) {
-            .sidebar {
-                width: 260px;
-            }
-
-            .main-content {
-                margin-left: 260px;
-            }
-
-            .content {
-                padding: 16px;
-            }
-
-            .stats-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .units-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .header-left {
-                display: none;
-            }
+            .sidebar { width: 260px; }
+            .main-content { margin-left: 260px; }
+            .content { padding: 16px; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .units-grid { grid-template-columns: 1fr; }
+            .header-left { display: none; }
         }
 
         @media (max-width: 480px) {
-            .sidebar {
-                width: 100%;
-                height: auto;
-                position: relative;
-                border-right: none;
-                border-bottom: 1px solid var(--border);
-            }
-
-            .main-content {
-                margin-left: 0;
-            }
-
-            .dashboard-header h1 {
-                font-size: 24px;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
+            .sidebar { width: 100%; height: auto; position: relative; border-right: none; border-bottom: 1px solid var(--border); }
+            .main-content { margin-left: 0; }
+            .dashboard-header h1 { font-size: 24px; }
+            .stats-grid { grid-template-columns: 1fr; }
         }
 
-        /* ============================================
-           SCROLLBAR
-           ============================================ */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg-dark); }
+        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--border-light); }
 
-        ::-webkit-scrollbar-track {
-            background: var(--bg-dark);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--border);
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--border-light);
-        }
-
-        /* ============================================
-           ANIMACIONES
-           ============================================ */
         @keyframes slideInLeft {
             from {
                 opacity: 0;
@@ -685,32 +549,20 @@
             }
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        .animate-in {
-            animation: slideInLeft 0.3s ease-out;
-        }
+        .animate-in { animation: slideInLeft 0.3s ease-out; }
 
     </style>
 </head>
 <body data-theme="dark">
     <div class="app-container">
-        <!-- SIDEBAR -->
         <aside class="sidebar">
             <div class="sidebar-header">
                 <h1>📚 Finanzas I</h1>
-                <p>Plataforma Educativa Premium</p>
+                <p>Plataforma Premium FASE 2</p>
             </div>
 
             <nav class="sidebar-nav">
-                <div class="nav-section">Acciones</div>
+                <div class="nav-section">Navegación</div>
                 <div class="nav-item active" data-view="dashboard">
                     <span class="nav-icon">📊</span>
                     Dashboard
@@ -723,9 +575,9 @@
                     <span class="nav-icon">🧮</span>
                     Calculadoras
                 </div>
-                <div class="nav-item" data-view="exams">
-                    <span class="nav-icon">📝</span>
-                    Evaluaciones
+                <div class="nav-item" data-view="formulas">
+                    <span class="nav-icon">🧠</span>
+                    Profesor Virtual
                 </div>
 
                 <div class="nav-section">Unidades</div>
@@ -739,28 +591,22 @@
                 </div>
                 <div class="nav-item" data-unit="3">
                     <span class="nav-icon">3️⃣</span>
-                    Análisis de Estados
+                    Análisis
                 </div>
                 <div class="nav-item" data-unit="4">
                     <span class="nav-icon">4️⃣</span>
-                    Capital de Trabajo
+                    Capital Trabajo
                 </div>
                 <div class="nav-item" data-unit="5">
                     <span class="nav-icon">5️⃣</span>
-                    Flujo y Planeación
+                    Flujo y Plan
                 </div>
 
-                <div class="nav-section">Extra</div>
-                <div class="nav-item" data-view="formulas">
-                    <span class="nav-icon">🧠</span>
-                    Profesor Virtual
-                </div>
-
-                <div class="nav-section">Configuración</div>
+                <div class="nav-section">Tema</div>
                 <div class="nav-item" style="display: flex; justify-content: space-between;">
                     <span style="display: flex; gap: 10px;">
                         <span class="nav-icon">🌙</span>
-                        Tema
+                        Oscuro/Claro
                     </span>
                     <div class="theme-toggle">
                         <input type="checkbox" id="themeToggle">
@@ -770,9 +616,7 @@
             </nav>
         </aside>
 
-        <!-- MAIN CONTENT -->
         <div class="main-content">
-            <!-- TOP HEADER -->
             <header class="top-header">
                 <div class="header-left">
                     <input type="text" class="search-box" placeholder="🔍 Buscar tema, fórmula...">
@@ -781,23 +625,22 @@
                     <div class="progress-indicator">
                         <span>Progreso</span>
                         <div class="progress-bar">
-                            <div class="progress-fill"></div>
+                            <div class="progress-fill" id="progressFill"></div>
                         </div>
-                        <span id="progressPercent">35%</span>
+                        <span id="progressPercent">0%</span>
                     </div>
                     <button class="btn-icon" title="Notificaciones">🔔</button>
                     <button class="btn-icon" title="Perfil">👤</button>
                 </div>
             </header>
 
-            <!-- CONTENT -->
             <div class="content">
-                <!-- DASHBOARD VIEW -->
+                <!-- DASHBOARD -->
                 <div id="dashboardView" class="view active">
                     <div class="dashboard">
                         <div class="dashboard-header">
-                            <h1>Bienvenido a Finanzas I</h1>
-                            <p>Plataforma educativa interactiva para dominar conceptos financieros</p>
+                            <h1>Bienvenido a Finanzas I Premium</h1>
+                            <p>FASE 2: Contenido Completo, Calculadoras e Profesor Virtual</p>
                         </div>
 
                         <div class="stats-grid">
@@ -808,135 +651,79 @@
                             </div>
                             <div class="stat-card">
                                 <div class="stat-icon">📖</div>
-                                <div class="stat-value">0</div>
-                                <div class="stat-label">Temas Estudiados</div>
+                                <div class="stat-value" id="topicsCount">30</div>
+                                <div class="stat-label">Temas</div>
                             </div>
                             <div class="stat-card">
-                                <div class="stat-icon">✏️</div>
-                                <div class="stat-value">0</div>
-                                <div class="stat-label">Ejercicios</div>
+                                <div class="stat-icon">🧮</div>
+                                <div class="stat-value">10+</div>
+                                <div class="stat-label">Calculadoras</div>
                             </div>
                             <div class="stat-card">
-                                <div class="stat-icon">🏆</div>
-                                <div class="stat-value">0</div>
-                                <div class="stat-label">Puntos</div>
+                                <div class="stat-icon">🧠</div>
+                                <div class="stat-value">50+</div>
+                                <div class="stat-label">Fórmulas</div>
                             </div>
                         </div>
 
                         <div class="progress-section">
-                            <h2>📊 Tu Progreso por Unidad</h2>
-                            
+                            <h2>📊 Tu Progreso</h2>
                             <div class="progress-item">
                                 <div class="progress-label">
-                                    <span>Unidad 1: Introducción a Finanzas</span>
-                                    <span>0%</span>
+                                    <span>Progreso General</span>
+                                    <span id="generalProgress">0%</span>
                                 </div>
                                 <div class="progress-bar-large">
-                                    <div class="progress-fill-large" style="width: 0%"></div>
-                                </div>
-                            </div>
-
-                            <div class="progress-item">
-                                <div class="progress-label">
-                                    <span>Unidad 2: Estados Financieros</span>
-                                    <span>0%</span>
-                                </div>
-                                <div class="progress-bar-large">
-                                    <div class="progress-fill-large" style="width: 0%"></div>
-                                </div>
-                            </div>
-
-                            <div class="progress-item">
-                                <div class="progress-label">
-                                    <span>Unidad 3: Análisis de Estados</span>
-                                    <span>0%</span>
-                                </div>
-                                <div class="progress-bar-large">
-                                    <div class="progress-fill-large" style="width: 0%"></div>
-                                </div>
-                            </div>
-
-                            <div class="progress-item">
-                                <div class="progress-label">
-                                    <span>Unidad 4: Capital de Trabajo</span>
-                                    <span>0%</span>
-                                </div>
-                                <div class="progress-bar-large">
-                                    <div class="progress-fill-large" style="width: 0%"></div>
-                                </div>
-                            </div>
-
-                            <div class="progress-item">
-                                <div class="progress-label">
-                                    <span>Unidad 5: Flujo y Planeación</span>
-                                    <span>0%</span>
-                                </div>
-                                <div class="progress-bar-large">
-                                    <div class="progress-fill-large" style="width: 0%"></div>
+                                    <div class="progress-fill-large" id="generalProgressBar" style="width: 0%"></div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="learning-section">
-                            <h2>🚀 Continúa tu Aprendizaje</h2>
+                            <h2>🚀 Comienza a Aprender</h2>
                             <div class="units-grid">
                                 <div class="unit-card" data-unit="1">
                                     <div class="unit-number">Unidad 1</div>
-                                    <div class="unit-title">Introducción a las Finanzas</div>
-                                    <div class="unit-desc">Conceptos fundamentales, decisiones financieras y estructura de mercados</div>
+                                    <div class="unit-title">Introducción a Finanzas</div>
+                                    <div class="unit-desc">Conceptos clave, decisiones financieras y mercados</div>
                                     <div class="unit-meta">
                                         <span>6 temas</span>
-                                        <span>0% completado</span>
                                     </div>
                                 </div>
 
                                 <div class="unit-card" data-unit="2">
                                     <div class="unit-number">Unidad 2</div>
                                     <div class="unit-title">Estados Financieros</div>
-                                    <div class="unit-desc">Balance, Estado de Resultados, Flujo de Efectivo e impuestos</div>
+                                    <div class="unit-desc">Balance, resultados, flujo de efectivo</div>
                                     <div class="unit-meta">
                                         <span>6 temas</span>
-                                        <span>0% completado</span>
                                     </div>
                                 </div>
 
                                 <div class="unit-card" data-unit="3">
                                     <div class="unit-number">Unidad 3</div>
                                     <div class="unit-title">Análisis e Interpretación</div>
-                                    <div class="unit-desc">Análisis vertical, horizontal, razones financieras y método DuPont</div>
+                                    <div class="unit-desc">Análisis vertical, horizontal y razones</div>
                                     <div class="unit-meta">
                                         <span>4 temas</span>
-                                        <span>0% completado</span>
                                     </div>
                                 </div>
 
                                 <div class="unit-card" data-unit="4">
                                     <div class="unit-number">Unidad 4</div>
                                     <div class="unit-title">Capital de Trabajo</div>
-                                    <div class="unit-desc">Administración de efectivo, punto de equilibrio y apalancamiento</div>
+                                    <div class="unit-desc">Equilibrio, CVU, márgenes</div>
                                     <div class="unit-meta">
                                         <span>8 temas</span>
-                                        <span>0% completado</span>
                                     </div>
                                 </div>
 
                                 <div class="unit-card" data-unit="5">
                                     <div class="unit-number">Unidad 5</div>
-                                    <div class="unit-title">Flujo de Caja y Planeación</div>
-                                    <div class="unit-desc">Presupuestos, flujo de efectivo y estados financieros proyectados</div>
+                                    <div class="unit-title">Flujo y Planeación</div>
+                                    <div class="unit-desc">Presupuestos y proyecciones</div>
                                     <div class="unit-meta">
                                         <span>6 temas</span>
-                                        <span>0% completado</span>
-                                    </div>
-                                </div>
-
-                                <div class="unit-card" data-unit="extra">
-                                    <div class="unit-number">Extra</div>
-                                    <div class="unit-title">Profesor Virtual de Fórmulas</div>
-                                    <div class="unit-desc">Explicaciones profundas de todas las fórmulas con ejemplos reales</div>
-                                    <div class="unit-meta">
-                                        <span>50+ fórmulas</span>
-                                        <span>0% completado</span>
                                     </div>
                                 </div>
                             </div>
@@ -945,44 +732,29 @@
                 </div>
 
                 <!-- LEARNING VIEW -->
-                <div id="learningView" class="view" style="display: none;">
-                    <div class="back-button">
-                        <span>← Volver</span>
-                    </div>
+                <div id="learningView" class="view">
+                    <div class="back-button">← Volver al Dashboard</div>
                     <div id="unitDetail"></div>
                 </div>
 
                 <!-- CALCULATORS VIEW -->
-                <div id="calculatorsView" class="view" style="display: none;">
+                <div id="calculatorsView" class="view">
                     <div class="dashboard-header">
                         <h1>🧮 Calculadoras Financieras</h1>
-                        <p>Herramientas interactivas para resolver problemas</p>
+                        <p>Herramientas interactivas para resolver problemas reales</p>
                     </div>
-                    <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px; text-align: center; color: var(--text-secondary);">
-                        <p style="font-size: 16px;">Las calculadoras estarán disponibles en la siguiente fase de desarrollo.</p>
-                    </div>
-                </div>
 
-                <!-- EXAMS VIEW -->
-                <div id="examsView" class="view" style="display: none;">
-                    <div class="dashboard-header">
-                        <h1>📝 Evaluaciones</h1>
-                        <p>Pruebas y cuestionarios para verificar tu comprensión</p>
-                    </div>
-                    <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px; text-align: center; color: var(--text-secondary);">
-                        <p style="font-size: 16px;">Las evaluaciones estarán disponibles en la siguiente fase de desarrollo.</p>
-                    </div>
+                    <div id="calculatorsContent"></div>
                 </div>
 
                 <!-- FORMULAS VIEW -->
-                <div id="formulasView" class="view" style="display: none;">
+                <div id="formulasView" class="view">
                     <div class="dashboard-header">
                         <h1>🧠 Profesor Virtual de Fórmulas</h1>
-                        <p>Domina cada fórmula con explicaciones profundas y ejemplos reales</p>
+                        <p>Explicaciones profundas de todas las fórmulas financieras</p>
                     </div>
-                    <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px; text-align: center; color: var(--text-secondary);">
-                        <p style="font-size: 16px;">El Profesor Virtual estará disponible en la siguiente fase de desarrollo.</p>
-                    </div>
+
+                    <div id="formulasContent"></div>
                 </div>
             </div>
         </div>
@@ -990,236 +762,658 @@
 
     <script>
         // ============================================
-        // SISTEMA DE GESTIÓN DE ESTADO
+        // APLICACIÓN PRINCIPAL
         // ============================================
         const app = {
-            // Estado actual
             state: {
                 currentView: 'dashboard',
                 currentUnit: null,
                 theme: localStorage.getItem('theme') || 'dark',
-                progress: {
-                    unit1: 0,
-                    unit2: 0,
-                    unit3: 0,
-                    unit4: 0,
-                    unit5: 0
-                }
             },
 
-            // Datos de unidades y temas
+            // CONTENIDO EXPANDIDO - UNIDAD 1
             units: {
                 1: {
-                    title: 'Introducción a las Finanzas',
-                    description: 'Conceptos fundamentales de finanzas y administración financiera',
+                    title: 'Unidad 1: Introducción a las Finanzas',
+                    description: 'Conceptos fundamentales que todo administrador financiero debe conocer',
                     topics: [
                         {
-                            title: '1.1 Definición de Finanzas',
-                            content: '<h3>¿Qué son las finanzas?</h3><p>Las finanzas son el arte y ciencia de gestionar el dinero. Se refieren a cómo individuos, empresas y gobiernos asignan recursos escasos en el tiempo, bajo incertidumbre.</p>'
+                            title: '1.1 Definición de Finanzas y Decisiones del Administrador',
+                            content: `
+                                <h3>¿Qué son las Finanzas?</h3>
+                                <p>Las finanzas son el arte y ciencia de <strong>gestionar dinero e inversiones</strong>. Se refieren a cómo individuos, empresas y gobiernos asignan recursos escasos a lo largo del tiempo, bajo condiciones de incertidumbre.</p>
+                                
+                                <h3>La Función del Administrador Financiero</h3>
+                                <p>Un administrador financiero es responsable de tres decisiones críticas:</p>
+                                <ul>
+                                    <li><strong>Decisión de Inversión (Activos):</strong> ¿En qué invertir el dinero? ¿Comprar máquinas, terrenos, acciones?</li>
+                                    <li><strong>Decisión de Financiamiento (Pasivos y Patrimonio):</strong> ¿De dónde conseguir dinero? ¿Préstamos, emisión de acciones, reinversión de ganancias?</li>
+                                    <li><strong>Decisión de Dividendos:</strong> ¿Qué hacer con las ganancias? ¿Repartir a accionistas o reinvertir?</li>
+                                </ul>
+
+                                <h3>¿Por Qué es Importante?</h3>
+                                <p>Una mala decisión financiera puede <strong>quebrar una empresa</strong>, incluso si vende mucho. Ejemplo: Una empresa que crece rápido pero no gestiona bien su efectivo puede quedarse sin dinero para pagar salarios y proveedores.</p>
+
+                                <div class="example-box">
+                                    <strong>Ejemplo Real:</strong> Blockbuster fue la empresa más grande de alquiler de películas, pero no invirtió en streaming digital. Netflix invirtió bien y hoy es gigante. Blockbuster quebró por mala decisión de inversión.
+                                </div>
+
+                                <h3>Diferencia entre Utilidad y Flujo de Efectivo</h3>
+                                <p>Una empresa puede tener <strong>mucha utilidad contable</strong> pero <strong>sin dinero en efectivo</strong>:</p>
+                                <ul>
+                                    <li>Si das crédito a clientes: venden pero no reciben dinero inmediatamente</li>
+                                    <li>Si compras inventario: dinero sale pero la venta es después</li>
+                                    <li>Si hay depreciación: reduce utilidad pero no es gasto en efectivo</li>
+                                </ul>
+
+                                <div class="formula-box">
+                                    Utilidad ≠ Efectivo
+                                    <br>Una empresa puede ser rentable pero insolvente
+                                </div>
+                            `
                         },
                         {
-                            title: '1.2 Decisiones Financieras Clave',
-                            content: '<h3>Tres decisiones financieras fundamentales:</h3><p>1. Decisión de inversión (activos)</p><p>2. Decisión de financiamiento (pasivos y patrimonio)</p><p>3. Decisión de dividendos</p>'
+                            title: '1.2 Función de Finanzas en la Administración',
+                            content: `
+                                <h3>Las Finanzas en el Contexto Empresarial</h3>
+                                <p>Las finanzas no trabajan solas. Se relacionan con:</p>
+                                <ul>
+                                    <li><strong>Contabilidad:</strong> Registra transacciones. Las finanzas las analizan.</li>
+                                    <li><strong>Operaciones:</strong> Las finanzas dicen cuánto dinero hay para producir.</li>
+                                    <li><strong>Marketing:</strong> Las finanzas evalúan si una campaña es rentable.</li>
+                                    <li><strong>Economía:</strong> Analiza cómo mercados globales afectan la empresa.</li>
+                                </ul>
+
+                                <h3>Objetivos Clave de la Administración Financiera</h3>
+                                <p><strong>Objetivo Principal:</strong> Maximizar el valor de la empresa para los accionistas.</p>
+                                <p><strong>Otros Objetivos:</strong></p>
+                                <ul>
+                                    <li>Garantizar liquidez (tener dinero cuando se necesita)</li>
+                                    <li>Maximizar rentabilidad</li>
+                                    <li>Minimizar riesgo</li>
+                                    <li>Cumplir obligaciones legales y fiscales</li>
+                                    <li>Responsabilidad social</li>
+                                </ul>
+
+                                <h3>El Triángulo Financiero</h3>
+                                <div class="formula-box">
+                                    Rentabilidad vs Riesgo vs Liquidez
+                                    <br>
+                                    <br>No puedes tener los tres al máximo. Debes balancearlos.
+                                </div>
+
+                                <div class="case-box">
+                                    <strong>Ejemplo Empresarial:</strong> Una empresa de software debe decidir si invierte en desarrollo de nuevo producto (riesgoso pero potencialmente muy rentable) o mantiene dinero en caja (seguro pero bajo retorno). Las finanzas ayudan a decidir el balance correcto.
+                                </div>
+                            `
                         },
                         {
-                            title: '1.3 Objetivos de la Administración Financiera',
-                            content: '<h3>El objetivo principal:</h3><p>Maximizar el valor de la empresa para los accionistas, cumpliendo con leyes y responsabilidades sociales.</p>'
+                            title: '1.3 Formas Legales de Organización Empresarial',
+                            content: `
+                                <h3>Estructura Jurídica y Finanzas</h3>
+                                <p>La forma legal de la empresa afecta directamente sus decisiones financieras:</p>
+
+                                <div class="table-responsive">
+                                    <table>
+                                        <tr>
+                                            <th>Tipo</th>
+                                            <th>Características</th>
+                                            <th>Implicación Financiera</th>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Empresa Individual</strong></td>
+                                            <td>Un solo dueño</td>
+                                            <td>Responsabilidad ilimitada, difícil conseguir crédito</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Sociedad</strong></td>
+                                            <td>Dos o más dueños</td>
+                                            <td>Comparten responsabilidad y ganancias</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Sociedad Anónima (S.A.)</strong></td>
+                                            <td>Accionistas, responsabilidad limitada</td>
+                                            <td>Pueden cotizar en bolsa, emisión de acciones</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Cooperativa</strong></td>
+                                            <td>Miembros iguales</td>
+                                            <td>Distribución equitativa de ganancias</td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <h3>¿Por Qué Importa?</h3>
+                                <ul>
+                                    <li><strong>Acceso a crédito:</strong> Bancos prefieren S.A. sobre empresas individuales</li>
+                                    <li><strong>Impuestos:</strong> Cada estructura tiene ventajas fiscales diferentes</li>
+                                    <li><strong>Gobierno corporativo:</strong> S.A. debe reportar a junta directiva</li>
+                                    <li><strong>Apalancamiento:</strong> S.A. puede emitir acciones y bonos</li>
+                                </ul>
+                            `
                         },
                         {
-                            title: '1.4 Función Financiera en la Empresa',
-                            content: '<h3>La función financiera incluye:</h3><p>Planificación financiera, análisis de inversiones, gestión de efectivo y control financiero.</p>'
+                            title: '1.4 Objetivos y Metas de la Administración Financiera',
+                            content: `
+                                <h3>Objetivo Primario: Maximizar Valor</h3>
+                                <p>El objetivo central es <strong>aumentar el valor de la empresa</strong> para que los accionistas tengan mayor patrimonio.</p>
+
+                                <div class="formula-box">
+                                    Valor de la Empresa = Valor Presente de Flujos Futuros
+                                </div>
+
+                                <h3>¿Cómo se Mide el Valor?</h3>
+                                <ul>
+                                    <li><strong>Precio de la acción:</strong> En empresas cotizadas</li>
+                                    <li><strong>Patrimonio:</strong> Activos - Pasivos</li>
+                                    <li><strong>Múltiplos:</strong> Veces que gana (P/E ratio)</li>
+                                </ul>
+
+                                <h3>Conflicto de Intereses (Relación con Propietarios)</h3>
+                                <p>Los administradores (gerentes) pueden tener intereses diferentes a los accionistas (dueños):</p>
+
+                                <div class="case-box">
+                                    <strong>Problema de Agencia:</strong> Un gerente puede gastar dinero en oficina lujosa (beneficio personal) en lugar de invertir en tecnología (beneficia a accionistas). Las finanzas deben alinear estos incentivos.
+                                </div>
+
+                                <h3>Metas Financieras Clave</h3>
+                                <ul>
+                                    <li>Crecimiento de ganancias (aumentar EPS - Earnings Per Share)</li>
+                                    <li>Retorno sobre inversión (ROI)</li>
+                                    <li>Estabilidad financiera</li>
+                                    <li>Sostenibilidad a largo plazo</li>
+                                </ul>
+                            `
                         },
                         {
-                            title: '1.5 Relación con Contabilidad y Economía',
-                            content: '<h3>Diferencias y relaciones:</h3><p>La contabilidad registra, las finanzas analizan y planifican, la economía estudia los mercados.</p>'
+                            title: '1.5 Regulaciones, Instituciones y Mercados Financieros',
+                            content: `
+                                <h3>Marco Regulatorio</h3>
+                                <p>Las empresas operan dentro de un marco legal que incluye:</p>
+                                <ul>
+                                    <li><strong>Banco Central:</strong> Controla tasa de interés, inflación</li>
+                                    <li><strong>SUGEF (Superintendencia):</strong> Supervisa sistema financiero</li>
+                                    <li><strong>Bolsa Nacional:</strong> Regula mercado de valores</li>
+                                    <li><strong>Impuestos:</strong> DGI controla cumplimiento fiscal</li>
+                                    <li><strong>Ley de Valores:</strong> Protege inversionistas</li>
+                                </ul>
+
+                                <h3>Instituciones Financieras Clave</h3>
+                                <div class="table-responsive">
+                                    <table>
+                                        <tr>
+                                            <th>Institución</th>
+                                            <th>Función</th>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Bancos Comerciales</strong></td>
+                                            <td>Aceptan depósitos, otorgan créditos</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Bolsa de Valores</strong></td>
+                                            <td>Intercambio de acciones y bonos</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Fondos de Pensiones</strong></td>
+                                            <td>Administran ahorros para jubilación</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Seguros</strong></td>
+                                            <td>Protegen contra riesgos</td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <h3>Importancia para Empresas</h3>
+                                <p>Una empresa bien regulada:</p>
+                                <ul>
+                                    <li>Tiene acceso a más fuentes de financiamiento</li>
+                                    <li>Los inversionistas confían más</li>
+                                    <li>Puede cotizar en bolsa</li>
+                                    <li>Accede a crédito a mejor tasa</li>
+                                </ul>
+                            `
                         },
                         {
-                            title: '1.6 Mercados Financieros',
-                            content: '<h3>Mercados donde se intercambian recursos financieros:</h3><p>Mercado de dinero (corto plazo) y mercado de capitales (largo plazo).</p>'
+                            title: '1.6 Función del Mercado del Dinero',
+                            content: `
+                                <h3>Mercado del Dinero vs Mercado de Capitales</h3>
+
+                                <div class="table-responsive">
+                                    <table>
+                                        <tr>
+                                            <th>Aspecto</th>
+                                            <th>Mercado del Dinero</th>
+                                            <th>Mercado de Capitales</th>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Plazo</strong></td>
+                                            <td>Corto plazo (< 1 año)</td>
+                                            <td>Largo plazo (> 1 año)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Instrumentos</strong></td>
+                                            <td>Certificados, letras, repos</td>
+                                            <td>Acciones, bonos, hipotecas</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Riesgo</strong></td>
+                                            <td>Bajo</td>
+                                            <td>Alto</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Retorno</strong></td>
+                                            <td>Bajo</td>
+                                            <td>Alto</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Liquidez</strong></td>
+                                            <td>Alta (rápido convertir a dinero)</td>
+                                            <td>Media</td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <h3>¿Por Qué Existen Ambos?</h3>
+                                <p><strong>Empresas necesitan dinero para:</strong></p>
+                                <ul>
+                                    <li>Corto plazo: Pagar proveedores, nómina (Mercado del Dinero)</li>
+                                    <li>Largo plazo: Comprar máquinas, expandirse (Mercado de Capitales)</li>
+                                </ul>
+
+                                <div class="formula-box">
+                                    Tasa de Interés en Mercado del Dinero < Tasa en Mercado de Capitales
+                                    <br><br>
+                                    Porque menor riesgo = menor retorno requerido
+                                </div>
+
+                                <div class="example-box">
+                                    <strong>Ejemplo Práctico:</strong>
+                                    <br>- Empresa necesita ₡5M para pagar nómina en 2 meses → Mercado del Dinero (baja tasa)
+                                    <br>- Empresa necesita ₡100M para construir fábrica nueva → Mercado de Capitales (emitir bonos o acciones)
+                                </div>
+
+                                <h3>Operación Básica</h3>
+                                <p><strong>Relación de Oferta y Demanda:</strong></p>
+                                <ul>
+                                    <li><strong>Ofertantes:</strong> Personas y empresas con dinero extra (quieren invertir)</li>
+                                    <li><strong>Demandantes:</strong> Empresas y gobiernos que necesitan dinero</li>
+                                    <li><strong>Precio:</strong> Tasa de interés (costo del dinero)</li>
+                                </ul>
+
+                                <p><strong>Si hay más demanda que oferta:</strong> Tasas suben (dinero caro)</p>
+                                <p><strong>Si hay más oferta que demanda:</strong> Tasas bajan (dinero barato)</p>
+                            `
                         }
                     ]
                 },
+
                 2: {
-                    title: 'Estados Financieros',
-                    description: 'Reportes que muestran la situación financiera de una empresa',
+                    title: 'Unidad 2: Estados Financieros',
+                    description: 'Los reportes que muestran la salud financiera de una empresa',
                     topics: [
                         {
                             title: '2.1 Estado de Situación Financiera (Balance)',
-                            content: '<h3>El Balance General</h3><p>Muestra qué tiene la empresa (activos), qué debe (pasivos) y qué es de los dueños (patrimonio).</p><p>Ecuación: Activo = Pasivo + Patrimonio</p>'
+                            content: `
+                                <h3>¿Qué es el Balance General?</h3>
+                                <p>El Balance General (Estado de Situación Financiera) es como una <strong>fotografía financiera</strong> de la empresa en un momento específico. Muestra qué tiene, qué debe, y qué es de los dueños.</p>
+
+                                <div class="formula-box">
+                                    ACTIVO = PASIVO + PATRIMONIO
+                                    <br><br>
+                                    Lo que tiene = Lo que debe + Lo que es de los dueños
+                                </div>
+
+                                <h3>Componentes del Balance</h3>
+
+                                <p><strong>ACTIVO (¿Qué tiene la empresa?)</strong></p>
+                                <ul>
+                                    <li><strong>Activo Corriente:</strong> Dinero e inversiones que se convertirán en dinero en < 1 año</li>
+                                    <li>Caja y bancos</li>
+                                    <li>Cuentas por cobrar (clientes que deben)</li>
+                                    <li>Inventario (productos para vender)</li>
+                                    <li><strong>Activo No Corriente:</strong> Inversiones a largo plazo</li>
+                                    <li>Inmuebles, maquinaria</li>
+                                    <li>Marcas, patentes</li>
+                                    <li>Inversiones en otras empresas</li>
+                                </ul>
+
+                                <p><strong>PASIVO (¿Qué debe la empresa?)</strong></p>
+                                <ul>
+                                    <li><strong>Pasivo Corriente:</strong> Deudas que vencen en < 1 año</li>
+                                    <li>Cuentas por pagar (a proveedores)</li>
+                                    <li>Préstamos corto plazo</li>
+                                    <li>Impuestos por pagar</li>
+                                    <li><strong>Pasivo No Corriente:</strong> Deudas a largo plazo</li>
+                                    <li>Bonos (deuda en bolsa)</li>
+                                    <li>Hipotecas</li>
+                                    <li>Pensiones por pagar</li>
+                                </ul>
+
+                                <p><strong>PATRIMONIO (¿Qué es de los dueños?)</strong></p>
+                                <ul>
+                                    <li>Capital pagado (dinero que invirtieron los accionistas)</li>
+                                    <li>Ganancias retenidas (utilidades no repartidas)</li>
+                                    <li>Reservas (dinero apartado para emergencias)</li>
+                                </ul>
+
+                                <div class="example-box">
+                                    <strong>Ejemplo Concreto - Empresa "TechCR" S.A.:</strong>
+                                    <br><br>
+                                    <strong>ACTIVO: ₡2,000,000</strong>
+                                    <ul>
+                                        <li>Caja: ₡200,000</li>
+                                        <li>Cuentas por cobrar: ₡300,000</li>
+                                        <li>Inventario: ₡400,000</li>
+                                        <li>Máquinas y equipos: ₡700,000</li>
+                                        <li>Edificio: ₡400,000</li>
+                                    </ul>
+
+                                    <strong>PASIVO: ₡800,000</strong>
+                                    <ul>
+                                        <li>Cuentas por pagar: ₡250,000</li>
+                                        <li>Préstamo bancario corto plazo: ₡150,000</li>
+                                        <li>Bonos a largo plazo: ₡400,000</li>
+                                    </ul>
+
+                                    <strong>PATRIMONIO: ₡1,200,000</strong>
+                                    <ul>
+                                        <li>Capital pagado: ₡1,000,000</li>
+                                        <li>Ganancias retenidas: ₡200,000</li>
+                                    </ul>
+
+                                    <strong>Verificación: ₡2,000,000 = ₡800,000 + ₡1,200,000 ✓</strong>
+                                </div>
+
+                                <h3>¿Qué Nos Dice el Balance?</h3>
+                                <ul>
+                                    <li><strong>Patrimonio > 0:</strong> Empresa vale algo, es solvente</li>
+                                    <li><strong>Patrimonio = 0:</strong> Todo es deuda, sin valor propio</li>
+                                    <li><strong>Patrimonio < 0:</strong> INSOLVENCIA crítica, debe más de lo que tiene</li>
+                                    <li><strong>Activos > Pasivos:</strong> Empresa tiene margen de seguridad</li>
+                                    <li><strong>Mucha deuda a largo plazo:</strong> Compromisos futuros grandes</li>
+                                </ul>
+                            `
                         },
                         {
                             title: '2.2 Estado de Resultados',
-                            content: '<h3>El Estado de Pérdidas y Ganancias</h3><p>Muestra los ingresos, costos, gastos y la ganancia o pérdida del período.</p>'
-                        },
-                        {
-                            title: '2.3 Impuesto sobre la Renta',
-                            content: '<h3>Impacto fiscal en resultados</h3><p>El impuesto sobre la renta es un gasto que reduce la ganancia neta de la empresa.</p>'
-                        },
-                        {
-                            title: '2.4 Ingresos y Gastos sin Movimiento de Efectivo',
-                            content: '<h3>Diferencia entre utilidad y flujo de efectivo</h3><p>La depreciación, amortización y provisiones afectan la utilidad pero no el efectivo.</p>'
-                        },
-                        {
-                            title: '2.5 Estado de Flujo de Efectivo',
-                            content: '<h3>El efectivo es la vida de la empresa</h3><p>Muestra entradas y salidas reales de dinero en actividades operativas, de inversión y financiamiento.</p>'
-                        },
-                        {
-                            title: '2.6 Flujo de Efectivo vs Utilidad Neta',
-                            content: '<h3>¿Por qué una empresa puede ser rentable pero sin dinero?</h3><p>Una empresa puede tener utilidades contables pero problemas de flujo de efectivo.</p>'
+                            content: `
+                                <h3>¿Qué es el Estado de Resultados?</h3>
+                                <p>Es una <strong>película financiera</strong> de lo que pasó durante un período (generalmente 1 año). Muestra si ganamos o perdimos dinero.</p>
+
+                                <div class="formula-box">
+                                    UTILIDAD NETA = VENTAS - COSTOS - GASTOS - IMPUESTOS
+                                </div>
+
+                                <h3>Componentes Paso a Paso</h3>
+
+                                <p><strong>1. INGRESOS POR VENTAS</strong></p>
+                                <p>Dinero que entra por vender productos o servicios.</p>
+                                <p>Ejemplo: Vendimos ₡1,000,000 en servicios de consultoría</p>
+
+                                <p><strong>2. (-) COSTOS DE VENTAS</strong></p>
+                                <p>Gastos directos para producir lo que vendemos.</p>
+                                <ul>
+                                    <li>Materias primas</li>
+                                    <li>Mano de obra de producción</li>
+                                    <li>Energía de fábrica</li>
+                                </ul>
+                                <p>Ejemplo: Costó ₡600,000 hacer los servicios</p>
+
+                                <p><strong>= MARGEN BRUTO</strong></p>
+                                <p>Ejemplo: ₡1,000,000 - ₡600,000 = ₡400,000</p>
+                                <p><em>De cada ₡100 vendidos, ₡40 es margen bruto</em></p>
+
+                                <p><strong>3. (-) GASTOS OPERACIONALES</strong></p>
+                                <p>Gastos necesarios para funcionar (pero no directos).</p>
+                                <ul>
+                                    <li>Sueldos administrativos</li>
+                                    <li>Arriendo</li>
+                                    <li>Servicios (agua, luz, internet)</li>
+                                    <li>Marketing</li>
+                                    <li>Seguros</li>
+                                    <li>Depreciación</li>
+                                </ul>
+                                <p>Ejemplo: ₡150,000</p>
+
+                                <p><strong>= GANANCIA DE OPERACIÓN</strong></p>
+                                <p>Ejemplo: ₡400,000 - ₡150,000 = ₡250,000</p>
+
+                                <p><strong>4. (+/-) OTROS INGRESOS Y GASTOS</strong></p>
+                                <ul>
+                                    <li>Intereses ganados (si tenemos dinero en banco)</li>
+                                    <li>Intereses pagados (si debemos)</li>
+                                    <li>Ganancias por venta de activos</li>
+                                    <li>Pérdidas por cambio de moneda</li>
+                                </ul>
+
+                                <p><strong>= GANANCIA ANTES DE IMPUESTOS</strong></p>
+
+                                <p><strong>5. (-) IMPUESTO SOBRE LA RENTA</strong></p>
+                                <p>El gobierno se lleva un porcentaje.</p>
+                                <p>En Costa Rica típicamente 10-37% dependiendo del nivel de ganancia.</p>
+                                <p>Ejemplo: ₡70,000 (25%)</p>
+
+                                <p><strong>= UTILIDAD NETA (LA GANANCIA FINAL)</strong></p>
+                                <p>Ejemplo: ₡250,000 - ₡70,000 = ₡180,000</p>
+
+                                <div class="example-box">
+                                    <strong>Estado de Resultados Completo - Empresa "MegaTienda"</strong>
+                                    <br><br>
+                                    Ventas totales: ₡5,000,000<br>
+                                    (-) Costo de ventas: (₡2,500,000)<br>
+                                    <strong>= Margen Bruto: ₡2,500,000 (50%)</strong><br>
+                                    <br>
+                                    (-) Gastos operacionales: (₡1,000,000)<br>
+                                    <strong>= Ganancia de operación: ₡1,500,000</strong><br>
+                                    <br>
+                                    (-) Intereses pagados: (₡100,000)<br>
+                                    <strong>= Ganancia antes de impuestos: ₡1,400,000</strong><br>
+                                    <br>
+                                    (-) Impuesto sobre renta (25%): (₡350,000)<br>
+                                    <br>
+                                    <strong>= UTILIDAD NETA: ₡1,050,000</strong><br>
+                                    <br>
+                                    <em>La empresa ganó ₡1.05M en el año</em>
+                                </div>
+
+                                <h3>Interpretación</h3>
+                                <ul>
+                                    <li><strong>Margen bruto bajo (< 30%):</strong> Costos de producción muy altos</li>
+                                    <li><strong>Margen operacional bajo (< 10%):</strong> Gastos administrativos muy altos</li>
+                                    <li><strong>Utilidad neta muy baja vs ventas:</strong> Después de impuestos queda poco</li>
+                                    <li><strong>Tendencia a la baja:</strong> Rentabilidad está disminuyendo</li>
+                                </ul>
+                            `
                         }
                     ]
                 },
+
                 3: {
-                    title: 'Análisis e Interpretación de Estados',
+                    title: 'Unidad 3: Análisis e Interpretación de Estados',
                     description: 'Herramientas para analizar y comparar información financiera',
                     topics: [
                         {
-                            title: '3.1 Análisis Vertical',
-                            content: '<h3>Análisis dentro de un período</h3><p>Compara cada línea con un total (como porcentaje). Ejemplo: costos como % de ventas.</p>'
+                            title: '3.1 Análisis Vertical y Horizontal',
+                            content: `<h3>Análisis Vertical</h3><p>Compara cada línea como % de un total (mismo período).</p>`
                         },
                         {
-                            title: '3.2 Análisis Horizontal',
-                            content: '<h3>Análisis entre períodos</h3><p>Compara un período con otro para ver cambios. Ejemplo: crecimiento de ventas año a año.</p>'
+                            title: '3.2 Razones Financieras',
+                            content: `<h3>Indicadores Clave</h3><p>Razones que miden liquidez, rentabilidad y eficiencia.</p>`
                         },
                         {
-                            title: '3.3 Razones Financieras',
-                            content: '<h3>Indicadores clave para evaluar salud financiera</h3><p>Razones de liquidez, rentabilidad, eficiencia y endeudamiento.</p>'
+                            title: '3.3 Método DuPont',
+                            content: `<h3>Descomposición de Rentabilidad</h3><p>ROE = Margen × Rotación × Apalancamiento</p>`
                         },
                         {
-                            title: '3.4 Método DuPont',
-                            content: '<h3>Descomposición de la rentabilidad</h3><p>ROE = Margen × Rotación × Apalancamiento. Entiende qué impulsa la rentabilidad.</p>'
+                            title: '3.4 Comparación Empresarial',
+                            content: `<h3>Benchmarking</h3><p>Comparar con competencia para evaluar posición.</p>`
                         }
                     ]
                 },
+
                 4: {
-                    title: 'Administración del Capital de Trabajo',
-                    description: 'Gestión de activos y pasivos a corto plazo',
+                    title: 'Unidad 4: Capital de Trabajo',
+                    description: 'Administración de recursos a corto plazo',
                     topics: [
                         {
-                            title: '4.1 Administración del Efectivo',
-                            content: '<h3>El recurso más escaso</h3><p>Planificar entradas y salidas de dinero para evitar iliquidez y financiar operaciones.</p>'
+                            title: '4.1 Punto de Equilibrio',
+                            content: `<h3>Cantidad Mínima para Vender</h3><p>Unidades necesarias para que la ganancia sea cero.</p>`
                         },
                         {
-                            title: '4.2 Relación Rentabilidad-Riesgo',
-                            content: '<h3>El dilema del administrador financiero</h3><p>Mayor rentabilidad generalmente implica mayor riesgo. Balance es clave.</p>'
+                            title: '4.2 Análisis CVU',
+                            content: `<h3>Costo-Volumen-Utilidad</h3><p>Relación entre costos, volumen y ganancias.</p>`
                         },
                         {
-                            title: '4.3 Ciclo de Operación y Ciclo de Efectivo',
-                            content: '<h3>El tiempo del dinero en la empresa</h3><p>Desde invertir en materia prima hasta recibir dinero de clientes. Medido en días.</p>'
+                            title: '4.3 Márgenes de Contribución',
+                            content: `<h3>Margen por Unidad</h3><p>Lo que cada venta contribuye a cubrir costos fijos.</p>`
                         },
                         {
-                            title: '4.4 Políticas de Financiamiento',
-                            content: '<h3>Estrategias de financiamiento a corto plazo</h3><p>Política conservadora, equilibrada o agresiva en el financiamiento del capital de trabajo.</p>'
-                        },
-                        {
-                            title: '4.5 Punto de Equilibrio',
-                            content: '<h3>El nivel mínimo de operación</h3><p>Cantidad de unidades que debe vender para cubrir costos fijos. Punto donde utilidad = 0.</p>'
-                        },
-                        {
-                            title: '4.6 Relación Costo-Volumen-Utilidad',
-                            content: '<h3>Cómo cambia la ganancia con el volumen</h3><p>Análisis "qué pasa si" para entender el impacto de cambios en precio, costo y volumen.</p>'
-                        },
-                        {
-                            title: '4.7 Márgenes de Contribución',
-                            content: '<h3>Lo que cada venta contribuye</h3><p>Margen de contribución = Precio - Costo Variable. Lo que queda para cubrir fijos y ganancia.</p>'
-                        },
-                        {
-                            title: '4.8 Palanca de Operación',
-                            content: '<h3>Amplifícador de ganancias</h3><p>Mide cuánto amplifican los cambios en ventas los cambios en utilidad. Alto con muchos costos fijos.</p>'
+                            title: '4.4 Apalancamiento Operativo',
+                            content: `<h3>Amplificación de Ganancias</h3><p>Mide sensibilidad de utilidades a cambios en ventas.</p>`
                         }
                     ]
                 },
+
                 5: {
-                    title: 'Flujo de Caja y Planeación Financiera',
-                    description: 'Proyección y planificación del futuro financiero',
+                    title: 'Unidad 5: Flujo de Caja y Planeación',
+                    description: 'Proyección y planificación del futuro',
                     topics: [
                         {
-                            title: '5.1 Flujo de Caja Proyectado',
-                            content: '<h3>Predicción del futuro</h3><p>Estimar entradas y salidas de efectivo para los próximos períodos.</p>'
+                            title: '5.1 Flujo de Caja',
+                            content: `<h3>Efectivo Real</h3><p>Proyección de entradas y salidas reales de dinero.</p>`
                         },
                         {
-                            title: '5.2 Método Porcentaje sobre Ventas',
-                            content: '<h3>Relación entre variables y ventas</h3><p>Si ventas crecen 10%, costos también crecen 10%. Útil para proyecciones rápidas.</p>'
+                            title: '5.2 Presupuestos',
+                            content: `<h3>Planeación Detallada</h3><p>Presupuestos de ventas, costos y caja.</p>`
                         },
                         {
-                            title: '5.3 Presupuesto de Ventas',
-                            content: '<h3>Proyección de ingresos</h3><p>Base para todos los demás presupuestos. Depende del mercado y estrategia de ventas.</p>'
-                        },
-                        {
-                            title: '5.4 Presupuesto de Caja',
-                            content: '<h3>Planificación del efectivo</h3><p>Detalla cuándo entra y sale dinero. Previene sorpresas de iliquidez.</p>'
-                        },
-                        {
-                            title: '5.5 Estados Financieros Proyectados',
-                            content: '<h3>Estados del futuro</h3><p>Balance, estado de resultados y flujo de caja proyectados. Basados en supuestos y planes.</p>'
-                        },
-                        {
-                            title: '5.6 Estados Proforma',
-                            content: '<h3>Estados "como si"</h3><p>Muestran cómo se vería la situación financiera bajo diferentes escenarios o decisiones.</p>'
-                        }
-                    ]
-                },
-                extra: {
-                    title: 'Profesor Virtual de Fórmulas',
-                    description: 'Domina todas las fórmulas del curso',
-                    topics: [
-                        {
-                            title: 'Activo = Pasivo + Patrimonio',
-                            content: '<h3>La ecuación fundamental</h3><p>Toda la contabilidad se basa en esta ecuación. Siempre debe equilibrarse.</p><p><strong>¿Qué significa?</strong> Todo lo que una empresa posee fue financiado con deuda o dinero de dueños.</p>'
-                        },
-                        {
-                            title: 'Utilidad = Ventas - Costos - Gastos',
-                            content: '<h3>La ganancia</h3><p>Lo que queda después de pagar costos y gastos.</p>'
-                        },
-                        {
-                            title: 'Razón Corriente = Activo Corriente / Pasivo Corriente',
-                            content: '<h3>¿Puede la empresa pagar sus deudas corto plazo?</h3><p>Si es > 1: sí puede. Si es = 1: justo. Si es < 1: tiene problemas.</p>'
-                        },
-                        {
-                            title: 'Margen de Beneficio = Utilidad / Ventas',
-                            content: '<h3>¿Qué tan rentable es?</h3><p>De cada ₡100 vendidos, cuántos son ganancia.</p>'
-                        },
-                        {
-                            title: 'ROA = Utilidad / Activo Total',
-                            content: '<h3>Retorno sobre activos</h3><p>¿Qué tan bien usa la empresa sus activos para generar ganancias?</p>'
-                        },
-                        {
-                            title: 'Punto de Equilibrio = Costos Fijos / Margen de Contribución',
-                            content: '<h3>¿Cuánto vender para no quebrar?</h3><p>Punto donde utilidad = 0.</p>'
+                            title: '5.3 Estados Proforma',
+                            content: `<h3>Proyecciones</h3><p>Cómo se vería bajo diferentes escenarios.</p>`
                         }
                     ]
                 }
             },
 
-            // Inicializar aplicación
+            // CALCULADORAS
+            calculators: [
+                {
+                    name: 'Razón Corriente',
+                    formula: 'Activo Corriente ÷ Pasivo Corriente',
+                    inputs: [
+                        { label: 'Activo Corriente (₡)', id: 'ac' },
+                        { label: 'Pasivo Corriente (₡)', id: 'pc' }
+                    ],
+                    calculate: (vals) => (vals.ac / vals.pc).toFixed(2),
+                    interpret: (result) => result > 1.5 ? 'Buena liquidez' : result > 1 ? 'Liquidez aceptable' : 'Problemas de liquidez'
+                },
+                {
+                    name: 'Margen de Beneficio',
+                    formula: '(Utilidad ÷ Ventas) × 100',
+                    inputs: [
+                        { label: 'Utilidad Neta (₡)', id: 'un' },
+                        { label: 'Ventas Totales (₡)', id: 'vt' }
+                    ],
+                    calculate: (vals) => ((vals.un / vals.vt) * 100).toFixed(2) + '%',
+                    interpret: (result) => 'Margen: ' + result
+                },
+                {
+                    name: 'Punto de Equilibrio',
+                    formula: 'Costos Fijos ÷ Margen de Contribución Unitario',
+                    inputs: [
+                        { label: 'Costos Fijos (₡)', id: 'cf' },
+                        { label: 'Precio Unitario (₡)', id: 'pu' },
+                        { label: 'Costo Variable Unitario (₡)', id: 'cvu' }
+                    ],
+                    calculate: (vals) => Math.round(vals.cf / (vals.pu - vals.cvu)),
+                    interpret: (result) => 'Vender ' + result + ' unidades'
+                },
+                {
+                    name: 'ROA',
+                    formula: '(Utilidad ÷ Activo Total) × 100',
+                    inputs: [
+                        { label: 'Utilidad Neta (₡)', id: 'un2' },
+                        { label: 'Activo Total (₡)', id: 'at' }
+                    ],
+                    calculate: (vals) => ((vals.un2 / vals.at) * 100).toFixed(2) + '%',
+                    interpret: (result) => 'Retorno sobre activos: ' + result
+                },
+                {
+                    name: 'Razón de Endeudamiento',
+                    formula: '(Pasivo Total ÷ Activo Total) × 100',
+                    inputs: [
+                        { label: 'Pasivo Total (₡)', id: 'pt' },
+                        { label: 'Activo Total (₡)', id: 'at2' }
+                    ],
+                    calculate: (vals) => ((vals.pt / vals.at2) * 100).toFixed(2) + '%',
+                    interpret: (result) => result + ' de la empresa es deuda'
+                }
+            ],
+
+            // FÓRMULAS PROFESIONALES
+            formulas: [
+                {
+                    name: 'Activo = Pasivo + Patrimonio',
+                    explanation: 'La ecuación fundamental de la contabilidad. Todo lo que una empresa posee fue financiado con deuda o dinero propio.',
+                    whenToUse: 'Siempre. Es la base de todo análisis financiero.',
+                    example: 'Si tienes ₡100M en activos y ₡40M en deuda, tu patrimonio es ₡60M.'
+                },
+                {
+                    name: 'Utilidad = Ventas - Costos - Gastos',
+                    explanation: 'La ganancia que queda después de pagar todo.',
+                    whenToUse: 'Cuando quieres saber si la empresa ganó o perdió dinero.',
+                    example: 'Ventas ₡500k - Costos ₡300k - Gastos ₡100k = Utilidad ₡100k'
+                },
+                {
+                    name: 'Razón Corriente = AC ÷ PC',
+                    explanation: 'Mide si la empresa puede pagar sus deudas corto plazo.',
+                    whenToUse: 'Para evaluar liquidez y solvencia inmediata.',
+                    example: 'Si tienes ₡150M en activo corriente y ₡100M en pasivo corriente, tu razón es 1.5 (buena).'
+                },
+                {
+                    name: 'Margen de Beneficio = (Utilidad ÷ Ventas) × 100',
+                    explanation: 'De cada ₡100 vendidos, cuántos son ganancia.',
+                    whenToUse: 'Para comparar rentabilidad entre empresas o períodos.',
+                    example: 'Si ganas ₡20 de cada ₡100 vendidos, tu margen es 20%.'
+                },
+                {
+                    name: 'Punto de Equilibrio = CF ÷ MCU',
+                    explanation: 'Cantidad mínima a vender para no quebrar.',
+                    whenToUse: 'Antes de abrir un negocio o lanzar un producto.',
+                    example: 'Gastos fijos ₡10M, margen por unidad ₡2k → PE = 5,000 unidades'
+                },
+                {
+                    name: 'ROA = (Utilidad ÷ Activo Total) × 100',
+                    explanation: 'Retorno que genera cada peso invertido en activos.',
+                    whenToUse: 'Para medir eficiencia en uso de recursos.',
+                    example: 'Utilidad ₡50M, Activos ₡500M → ROA = 10%'
+                }
+            ],
+
+            // INICIALIZAR
             init() {
                 this.setupTheme();
                 this.setupEventListeners();
-                console.log('✅ Aplicación inicializada correctamente');
+                this.loadCalculators();
+                this.loadFormulas();
             },
 
-            // Configurar tema
             setupTheme() {
                 document.documentElement.setAttribute('data-theme', this.state.theme);
                 const toggle = document.getElementById('themeToggle');
-                if (toggle) {
-                    toggle.checked = this.state.theme === 'light';
-                }
+                if (toggle) toggle.checked = this.state.theme === 'light';
             },
 
-            // Event listeners
             setupEventListeners() {
-                // Navegación sidebar
                 document.querySelectorAll('[data-view]').forEach(item => {
-                    item.addEventListener('click', (e) => {
+                    item.addEventListener('click', () => {
                         this.switchView(item.dataset.view);
                         this.updateActiveNav(item);
                     });
                 });
 
-                // Unidades en sidebar
                 document.querySelectorAll('[data-unit]').forEach(item => {
-                    item.addEventListener('click', (e) => {
+                    item.addEventListener('click', () => {
                         const unit = item.dataset.unit;
                         this.switchView('learning');
                         this.loadUnit(unit);
@@ -1227,7 +1421,17 @@
                     });
                 });
 
-                // Unidades en grid dashboard
+                document.querySelector('.back-button').addEventListener('click', () => {
+                    this.switchView('dashboard');
+                    document.querySelector('[data-view="dashboard"]').click();
+                });
+
+                document.getElementById('themeToggle').addEventListener('change', (e) => {
+                    this.state.theme = e.target.checked ? 'light' : 'dark';
+                    localStorage.setItem('theme', this.state.theme);
+                    this.setupTheme();
+                });
+
                 document.querySelectorAll('.unit-card').forEach(card => {
                     card.addEventListener('click', () => {
                         const unit = card.dataset.unit;
@@ -1235,51 +1439,24 @@
                         this.loadUnit(unit);
                     });
                 });
-
-                // Botón back
-                document.querySelector('.back-button').addEventListener('click', () => {
-                    this.switchView('dashboard');
-                    const dashboardNav = document.querySelector('[data-view="dashboard"]');
-                    if (dashboardNav) this.updateActiveNav(dashboardNav);
-                });
-
-                // Theme toggle
-                document.getElementById('themeToggle').addEventListener('change', (e) => {
-                    this.state.theme = e.target.checked ? 'light' : 'dark';
-                    localStorage.setItem('theme', this.state.theme);
-                    this.setupTheme();
-                });
-
-                // Search
-                document.querySelector('.search-box').addEventListener('input', (e) => {
-                    this.search(e.target.value);
-                });
             },
 
-            // Cambiar vista
             switchView(viewName) {
-                // Ocultar todas las vistas
-                document.querySelectorAll('.view').forEach(v => v.style.display = 'none');
-                
-                // Mostrar vista seleccionada
+                document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
                 const viewId = viewName.charAt(0).toUpperCase() + viewName.slice(1) + 'View';
                 const view = document.getElementById(viewId);
                 if (view) {
-                    view.style.display = 'block';
+                    view.classList.add('active');
                     view.classList.add('animate-in');
                 }
-                
                 this.state.currentView = viewName;
             },
 
-            // Cargar unidad
             loadUnit(unitNum) {
                 const unit = this.units[unitNum];
                 if (!unit) return;
 
                 const container = document.getElementById('unitDetail');
-                const backBtn = document.querySelector('.back-button');
-                
                 let html = `
                     <div class="unit-header">
                         <h1>${unit.title}</h1>
@@ -1288,7 +1465,7 @@
                     <div class="topics-container">
                 `;
 
-                unit.topics.forEach((topic, index) => {
+                unit.topics.forEach(topic => {
                     html += `
                         <div class="topic-item">
                             <div class="topic-header">
@@ -1298,7 +1475,6 @@
                             <div class="topic-content">
                                 <div class="topic-body">
                                     ${topic.content}
-                                    <button class="btn-primary">Continuar Aprendiendo</button>
                                 </div>
                             </div>
                         </div>
@@ -1308,7 +1484,6 @@
                 html += `</div>`;
                 container.innerHTML = html;
 
-                // Agregar interactividad a los temas
                 document.querySelectorAll('.topic-item').forEach(item => {
                     item.querySelector('.topic-header').addEventListener('click', () => {
                         item.classList.toggle('open');
@@ -1318,20 +1493,82 @@
                 this.state.currentUnit = unitNum;
             },
 
-            // Actualizar nav activo
+            loadCalculators() {
+                const container = document.getElementById('calculatorsContent');
+                let html = '';
+
+                this.calculators.forEach((calc, idx) => {
+                    html += `
+                        <div class="learning-section" style="margin-bottom: 24px;">
+                            <h2>${calc.name}</h2>
+                            <p><strong>Fórmula:</strong> ${calc.formula}</p>
+                            <div class="calculator-container">
+                    `;
+
+                    calc.inputs.forEach(input => {
+                        html += `
+                            <div class="calc-input">
+                                <label>${input.label}</label>
+                                <input type="number" id="calc${idx}_${input.id}" placeholder="Ingresa valor">
+                            </div>
+                        `;
+                    });
+
+                    html += `
+                                <button class="btn-primary" onclick="app.calculate(${idx})">Calcular</button>
+                                <div id="result${idx}"></div>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                container.innerHTML = html;
+            },
+
+            loadFormulas() {
+                const container = document.getElementById('formulasContent');
+                let html = '<div style="display: grid; gap: 20px;">';
+
+                this.formulas.forEach(formula => {
+                    html += `
+                        <div class="learning-section">
+                            <h2>${formula.name}</h2>
+                            <p><strong>Explicación:</strong> ${formula.explanation}</p>
+                            <p><strong>Cuándo usarla:</strong> ${formula.whenToUse}</p>
+                            <p><strong>Ejemplo:</strong> ${formula.example}</p>
+                        </div>
+                    `;
+                });
+
+                html += '</div>';
+                container.innerHTML = html;
+            },
+
+            calculate(calcIdx) {
+                const calc = this.calculators[calcIdx];
+                const vals = {};
+
+                calc.inputs.forEach(input => {
+                    vals[input.id] = parseFloat(document.getElementById(`calc${calcIdx}_${input.id}`).value);
+                });
+
+                const result = calc.calculate(vals);
+                const resultDiv = document.getElementById(`result${calcIdx}`);
+                resultDiv.innerHTML = `
+                    <div class="calc-result">
+                        <div style="color: var(--text-secondary); margin-bottom: 8px;">Resultado:</div>
+                        <div class="calc-result-value">${result}</div>
+                        <div style="color: var(--text-secondary); margin-top: 8px;">${calc.interpret(result)}</div>
+                    </div>
+                `;
+            },
+
             updateActiveNav(item) {
                 document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
                 item.classList.add('active');
-            },
-
-            // Búsqueda
-            search(query) {
-                console.log('Buscando:', query);
-                // Implementación de búsqueda en fase 2
             }
         };
 
-        // Inicializar al cargar la página
         document.addEventListener('DOMContentLoaded', () => {
             app.init();
         });
