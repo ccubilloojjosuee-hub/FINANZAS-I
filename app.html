@@ -1,0 +1,1340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finanzas I - Plataforma Educativa Premium</title>
+    <style>
+        /* ============================================
+           VARIABLES Y TEMA
+           ============================================ */
+        :root {
+            --primary: #00c896;
+            --primary-dark: #00a876;
+            --secondary: #5b8dee;
+            --accent: #f5a623;
+            --danger: #ff6b6b;
+            --success: #00c896;
+            --warning: #ffd93d;
+            
+            --bg-dark: #0a0e1a;
+            --bg-darker: #05070f;
+            --surface: #111828;
+            --surface-light: #1a2235;
+            --border: #1e2d45;
+            --border-light: #2a3a55;
+            
+            --text-primary: #e8edf5;
+            --text-secondary: #8a9bb5;
+            --text-tertiary: #5a6a82;
+            
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.5);
+            
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Tema Claro */
+        [data-theme="light"] {
+            --bg-dark: #f8f9fa;
+            --bg-darker: #ffffff;
+            --surface: #ffffff;
+            --surface-light: #f0f2f5;
+            --border: #e0e3e8;
+            --border-light: #d0d5db;
+            
+            --text-primary: #1a202c;
+            --text-secondary: #4a5568;
+            --text-tertiary: #718096;
+        }
+
+        /* ============================================
+           RESET Y BASE
+           ============================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ============================================
+           LAYOUT PRINCIPAL
+           ============================================ */
+        .app-container {
+            display: flex;
+            min-height: 100vh;
+            background: var(--bg-dark);
+        }
+
+        /* ============================================
+           SIDEBAR
+           ============================================ */
+        .sidebar {
+            width: 300px;
+            background: var(--surface);
+            border-right: 1px solid var(--border);
+            overflow-y: auto;
+            position: fixed;
+            height: 100vh;
+            z-index: 100;
+            transition: var(--transition);
+        }
+
+        .sidebar-header {
+            padding: 24px;
+            border-bottom: 1px solid var(--border);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+
+        .sidebar-header h1 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .sidebar-header p {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        .sidebar-nav {
+            padding: 16px 0;
+        }
+
+        .nav-section {
+            padding: 12px 16px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            color: var(--text-tertiary);
+            letter-spacing: 1px;
+            margin-top: 16px;
+        }
+
+        .nav-item {
+            padding: 12px 16px;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-secondary);
+            border-left: 3px solid transparent;
+        }
+
+        .nav-item:hover {
+            background: var(--surface-light);
+            color: var(--text-primary);
+        }
+
+        .nav-item.active {
+            background: var(--surface-light);
+            color: var(--primary);
+            border-left-color: var(--primary);
+            font-weight: 600;
+        }
+
+        .nav-icon {
+            font-size: 18px;
+            min-width: 20px;
+        }
+
+        /* ============================================
+           MAIN CONTENT
+           ============================================ */
+        .main-content {
+            margin-left: 300px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ============================================
+           HEADER TOP
+           ============================================ */
+        .top-header {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex: 1;
+        }
+
+        .search-box {
+            flex: 1;
+            max-width: 400px;
+            background: var(--surface-light);
+            border: 1px solid var(--border);
+            padding: 10px 16px;
+            border-radius: 8px;
+            color: var(--text-primary);
+            font-size: 14px;
+            transition: var(--transition);
+        }
+
+        .search-box:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 200, 150, 0.1);
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .progress-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+        }
+
+        .progress-bar {
+            width: 80px;
+            height: 4px;
+            background: var(--surface-light);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            width: 35%;
+            transition: var(--transition);
+        }
+
+        .btn-icon {
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: var(--surface-light);
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            transition: var(--transition);
+            color: var(--text-primary);
+        }
+
+        .btn-icon:hover {
+            background: var(--border);
+        }
+
+        /* ============================================
+           CONTENT AREA
+           ============================================ */
+        .content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 28px;
+        }
+
+        /* ============================================
+           DASHBOARD
+           ============================================ */
+        .dashboard {
+            display: grid;
+            gap: 24px;
+        }
+
+        .dashboard-header {
+            margin-bottom: 28px;
+        }
+
+        .dashboard-header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .dashboard-header p {
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+        }
+
+        .stat-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .stat-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .stat-icon {
+            font-size: 28px;
+            margin-bottom: 12px;
+        }
+
+        .progress-section {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+
+        .progress-section h2 {
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+
+        .progress-item {
+            margin-bottom: 16px;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .progress-bar-large {
+            width: 100%;
+            height: 8px;
+            background: var(--surface-light);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill-large {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: var(--transition);
+        }
+
+        /* ============================================
+           LEARNING SECTION
+           ============================================ */
+        .learning-section {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        .learning-section h2 {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .units-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+        }
+
+        .unit-card {
+            background: var(--surface-light);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .unit-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .unit-number {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .unit-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .unit-desc {
+            font-size: 13px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .unit-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 12px;
+            color: var(--text-tertiary);
+        }
+
+        /* ============================================
+           UNIT DETAIL VIEW
+           ============================================ */
+        .unit-detail {
+            display: none;
+        }
+
+        .unit-detail.active {
+            display: block;
+        }
+
+        .unit-header {
+            margin-bottom: 28px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--border);
+        }
+
+        .unit-header h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .unit-header p {
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        .topics-container {
+            display: grid;
+            gap: 12px;
+        }
+
+        .topic-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .topic-header {
+            padding: 16px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+
+        .topic-header:hover {
+            background: var(--surface-light);
+        }
+
+        .topic-title {
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .topic-toggle {
+            font-size: 18px;
+            transition: var(--transition);
+            color: var(--text-secondary);
+        }
+
+        .topic-item.open .topic-toggle {
+            transform: rotate(180deg);
+        }
+
+        .topic-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background: var(--surface-light);
+            border-top: 1px solid var(--border);
+        }
+
+        .topic-item.open .topic-content {
+            max-height: 2000px;
+        }
+
+        .topic-body {
+            padding: 20px;
+        }
+
+        .topic-body h3 {
+            font-size: 16px;
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
+
+        .topic-body p {
+            margin-bottom: 12px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: var(--transition);
+            display: inline-block;
+            margin-top: 16px;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* ============================================
+           BACK BUTTON
+           ============================================ */
+        .back-button {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            color: var(--primary);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .back-button:hover {
+            gap: 12px;
+        }
+
+        /* ============================================
+           THEME TOGGLE
+           ============================================ */
+        .theme-toggle {
+            position: relative;
+            width: 50px;
+            height: 28px;
+        }
+
+        .theme-toggle input {
+            display: none;
+        }
+
+        .theme-label {
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: var(--surface-light);
+            border-radius: 14px;
+            cursor: pointer;
+            position: relative;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .theme-label::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background: white;
+            border-radius: 12px;
+            top: 2px;
+            left: 2px;
+            transition: var(--transition);
+        }
+
+        .theme-toggle input:checked + .theme-label {
+            background: var(--primary);
+        }
+
+        .theme-toggle input:checked + .theme-label::after {
+            left: 24px;
+        }
+
+        /* ============================================
+           RESPONSIVO
+           ============================================ */
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 260px;
+            }
+
+            .main-content {
+                margin-left: 260px;
+            }
+
+            .content {
+                padding: 16px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .units-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header-left {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .dashboard-header h1 {
+                font-size: 24px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============================================
+           SCROLLBAR
+           ============================================ */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-dark);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--border-light);
+        }
+
+        /* ============================================
+           ANIMACIONES
+           ============================================ */
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .animate-in {
+            animation: slideInLeft 0.3s ease-out;
+        }
+
+    </style>
+</head>
+<body data-theme="dark">
+    <div class="app-container">
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1>📚 Finanzas I</h1>
+                <p>Plataforma Educativa Premium</p>
+            </div>
+
+            <nav class="sidebar-nav">
+                <div class="nav-section">Acciones</div>
+                <div class="nav-item active" data-view="dashboard">
+                    <span class="nav-icon">📊</span>
+                    Dashboard
+                </div>
+                <div class="nav-item" data-view="learning">
+                    <span class="nav-icon">📖</span>
+                    Aprender
+                </div>
+                <div class="nav-item" data-view="calculators">
+                    <span class="nav-icon">🧮</span>
+                    Calculadoras
+                </div>
+                <div class="nav-item" data-view="exams">
+                    <span class="nav-icon">📝</span>
+                    Evaluaciones
+                </div>
+
+                <div class="nav-section">Unidades</div>
+                <div class="nav-item" data-unit="1">
+                    <span class="nav-icon">1️⃣</span>
+                    Introducción
+                </div>
+                <div class="nav-item" data-unit="2">
+                    <span class="nav-icon">2️⃣</span>
+                    Estados Financieros
+                </div>
+                <div class="nav-item" data-unit="3">
+                    <span class="nav-icon">3️⃣</span>
+                    Análisis de Estados
+                </div>
+                <div class="nav-item" data-unit="4">
+                    <span class="nav-icon">4️⃣</span>
+                    Capital de Trabajo
+                </div>
+                <div class="nav-item" data-unit="5">
+                    <span class="nav-icon">5️⃣</span>
+                    Flujo y Planeación
+                </div>
+
+                <div class="nav-section">Extra</div>
+                <div class="nav-item" data-view="formulas">
+                    <span class="nav-icon">🧠</span>
+                    Profesor Virtual
+                </div>
+
+                <div class="nav-section">Configuración</div>
+                <div class="nav-item" style="display: flex; justify-content: space-between;">
+                    <span style="display: flex; gap: 10px;">
+                        <span class="nav-icon">🌙</span>
+                        Tema
+                    </span>
+                    <div class="theme-toggle">
+                        <input type="checkbox" id="themeToggle">
+                        <label for="themeToggle" class="theme-label"></label>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <div class="main-content">
+            <!-- TOP HEADER -->
+            <header class="top-header">
+                <div class="header-left">
+                    <input type="text" class="search-box" placeholder="🔍 Buscar tema, fórmula...">
+                </div>
+                <div class="header-right">
+                    <div class="progress-indicator">
+                        <span>Progreso</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                        <span id="progressPercent">35%</span>
+                    </div>
+                    <button class="btn-icon" title="Notificaciones">🔔</button>
+                    <button class="btn-icon" title="Perfil">👤</button>
+                </div>
+            </header>
+
+            <!-- CONTENT -->
+            <div class="content">
+                <!-- DASHBOARD VIEW -->
+                <div id="dashboardView" class="view active">
+                    <div class="dashboard">
+                        <div class="dashboard-header">
+                            <h1>Bienvenido a Finanzas I</h1>
+                            <p>Plataforma educativa interactiva para dominar conceptos financieros</p>
+                        </div>
+
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-icon">📚</div>
+                                <div class="stat-value">5</div>
+                                <div class="stat-label">Unidades</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">📖</div>
+                                <div class="stat-value">0</div>
+                                <div class="stat-label">Temas Estudiados</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">✏️</div>
+                                <div class="stat-value">0</div>
+                                <div class="stat-label">Ejercicios</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-icon">🏆</div>
+                                <div class="stat-value">0</div>
+                                <div class="stat-label">Puntos</div>
+                            </div>
+                        </div>
+
+                        <div class="progress-section">
+                            <h2>📊 Tu Progreso por Unidad</h2>
+                            
+                            <div class="progress-item">
+                                <div class="progress-label">
+                                    <span>Unidad 1: Introducción a Finanzas</span>
+                                    <span>0%</span>
+                                </div>
+                                <div class="progress-bar-large">
+                                    <div class="progress-fill-large" style="width: 0%"></div>
+                                </div>
+                            </div>
+
+                            <div class="progress-item">
+                                <div class="progress-label">
+                                    <span>Unidad 2: Estados Financieros</span>
+                                    <span>0%</span>
+                                </div>
+                                <div class="progress-bar-large">
+                                    <div class="progress-fill-large" style="width: 0%"></div>
+                                </div>
+                            </div>
+
+                            <div class="progress-item">
+                                <div class="progress-label">
+                                    <span>Unidad 3: Análisis de Estados</span>
+                                    <span>0%</span>
+                                </div>
+                                <div class="progress-bar-large">
+                                    <div class="progress-fill-large" style="width: 0%"></div>
+                                </div>
+                            </div>
+
+                            <div class="progress-item">
+                                <div class="progress-label">
+                                    <span>Unidad 4: Capital de Trabajo</span>
+                                    <span>0%</span>
+                                </div>
+                                <div class="progress-bar-large">
+                                    <div class="progress-fill-large" style="width: 0%"></div>
+                                </div>
+                            </div>
+
+                            <div class="progress-item">
+                                <div class="progress-label">
+                                    <span>Unidad 5: Flujo y Planeación</span>
+                                    <span>0%</span>
+                                </div>
+                                <div class="progress-bar-large">
+                                    <div class="progress-fill-large" style="width: 0%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="learning-section">
+                            <h2>🚀 Continúa tu Aprendizaje</h2>
+                            <div class="units-grid">
+                                <div class="unit-card" data-unit="1">
+                                    <div class="unit-number">Unidad 1</div>
+                                    <div class="unit-title">Introducción a las Finanzas</div>
+                                    <div class="unit-desc">Conceptos fundamentales, decisiones financieras y estructura de mercados</div>
+                                    <div class="unit-meta">
+                                        <span>6 temas</span>
+                                        <span>0% completado</span>
+                                    </div>
+                                </div>
+
+                                <div class="unit-card" data-unit="2">
+                                    <div class="unit-number">Unidad 2</div>
+                                    <div class="unit-title">Estados Financieros</div>
+                                    <div class="unit-desc">Balance, Estado de Resultados, Flujo de Efectivo e impuestos</div>
+                                    <div class="unit-meta">
+                                        <span>6 temas</span>
+                                        <span>0% completado</span>
+                                    </div>
+                                </div>
+
+                                <div class="unit-card" data-unit="3">
+                                    <div class="unit-number">Unidad 3</div>
+                                    <div class="unit-title">Análisis e Interpretación</div>
+                                    <div class="unit-desc">Análisis vertical, horizontal, razones financieras y método DuPont</div>
+                                    <div class="unit-meta">
+                                        <span>4 temas</span>
+                                        <span>0% completado</span>
+                                    </div>
+                                </div>
+
+                                <div class="unit-card" data-unit="4">
+                                    <div class="unit-number">Unidad 4</div>
+                                    <div class="unit-title">Capital de Trabajo</div>
+                                    <div class="unit-desc">Administración de efectivo, punto de equilibrio y apalancamiento</div>
+                                    <div class="unit-meta">
+                                        <span>8 temas</span>
+                                        <span>0% completado</span>
+                                    </div>
+                                </div>
+
+                                <div class="unit-card" data-unit="5">
+                                    <div class="unit-number">Unidad 5</div>
+                                    <div class="unit-title">Flujo de Caja y Planeación</div>
+                                    <div class="unit-desc">Presupuestos, flujo de efectivo y estados financieros proyectados</div>
+                                    <div class="unit-meta">
+                                        <span>6 temas</span>
+                                        <span>0% completado</span>
+                                    </div>
+                                </div>
+
+                                <div class="unit-card" data-unit="extra">
+                                    <div class="unit-number">Extra</div>
+                                    <div class="unit-title">Profesor Virtual de Fórmulas</div>
+                                    <div class="unit-desc">Explicaciones profundas de todas las fórmulas con ejemplos reales</div>
+                                    <div class="unit-meta">
+                                        <span>50+ fórmulas</span>
+                                        <span>0% completado</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LEARNING VIEW -->
+                <div id="learningView" class="view" style="display: none;">
+                    <div class="back-button">
+                        <span>← Volver</span>
+                    </div>
+                    <div id="unitDetail"></div>
+                </div>
+
+                <!-- CALCULATORS VIEW -->
+                <div id="calculatorsView" class="view" style="display: none;">
+                    <div class="dashboard-header">
+                        <h1>🧮 Calculadoras Financieras</h1>
+                        <p>Herramientas interactivas para resolver problemas</p>
+                    </div>
+                    <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px; text-align: center; color: var(--text-secondary);">
+                        <p style="font-size: 16px;">Las calculadoras estarán disponibles en la siguiente fase de desarrollo.</p>
+                    </div>
+                </div>
+
+                <!-- EXAMS VIEW -->
+                <div id="examsView" class="view" style="display: none;">
+                    <div class="dashboard-header">
+                        <h1>📝 Evaluaciones</h1>
+                        <p>Pruebas y cuestionarios para verificar tu comprensión</p>
+                    </div>
+                    <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px; text-align: center; color: var(--text-secondary);">
+                        <p style="font-size: 16px;">Las evaluaciones estarán disponibles en la siguiente fase de desarrollo.</p>
+                    </div>
+                </div>
+
+                <!-- FORMULAS VIEW -->
+                <div id="formulasView" class="view" style="display: none;">
+                    <div class="dashboard-header">
+                        <h1>🧠 Profesor Virtual de Fórmulas</h1>
+                        <p>Domina cada fórmula con explicaciones profundas y ejemplos reales</p>
+                    </div>
+                    <div style="background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px; text-align: center; color: var(--text-secondary);">
+                        <p style="font-size: 16px;">El Profesor Virtual estará disponible en la siguiente fase de desarrollo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ============================================
+        // SISTEMA DE GESTIÓN DE ESTADO
+        // ============================================
+        const app = {
+            // Estado actual
+            state: {
+                currentView: 'dashboard',
+                currentUnit: null,
+                theme: localStorage.getItem('theme') || 'dark',
+                progress: {
+                    unit1: 0,
+                    unit2: 0,
+                    unit3: 0,
+                    unit4: 0,
+                    unit5: 0
+                }
+            },
+
+            // Datos de unidades y temas
+            units: {
+                1: {
+                    title: 'Introducción a las Finanzas',
+                    description: 'Conceptos fundamentales de finanzas y administración financiera',
+                    topics: [
+                        {
+                            title: '1.1 Definición de Finanzas',
+                            content: '<h3>¿Qué son las finanzas?</h3><p>Las finanzas son el arte y ciencia de gestionar el dinero. Se refieren a cómo individuos, empresas y gobiernos asignan recursos escasos en el tiempo, bajo incertidumbre.</p>'
+                        },
+                        {
+                            title: '1.2 Decisiones Financieras Clave',
+                            content: '<h3>Tres decisiones financieras fundamentales:</h3><p>1. Decisión de inversión (activos)</p><p>2. Decisión de financiamiento (pasivos y patrimonio)</p><p>3. Decisión de dividendos</p>'
+                        },
+                        {
+                            title: '1.3 Objetivos de la Administración Financiera',
+                            content: '<h3>El objetivo principal:</h3><p>Maximizar el valor de la empresa para los accionistas, cumpliendo con leyes y responsabilidades sociales.</p>'
+                        },
+                        {
+                            title: '1.4 Función Financiera en la Empresa',
+                            content: '<h3>La función financiera incluye:</h3><p>Planificación financiera, análisis de inversiones, gestión de efectivo y control financiero.</p>'
+                        },
+                        {
+                            title: '1.5 Relación con Contabilidad y Economía',
+                            content: '<h3>Diferencias y relaciones:</h3><p>La contabilidad registra, las finanzas analizan y planifican, la economía estudia los mercados.</p>'
+                        },
+                        {
+                            title: '1.6 Mercados Financieros',
+                            content: '<h3>Mercados donde se intercambian recursos financieros:</h3><p>Mercado de dinero (corto plazo) y mercado de capitales (largo plazo).</p>'
+                        }
+                    ]
+                },
+                2: {
+                    title: 'Estados Financieros',
+                    description: 'Reportes que muestran la situación financiera de una empresa',
+                    topics: [
+                        {
+                            title: '2.1 Estado de Situación Financiera (Balance)',
+                            content: '<h3>El Balance General</h3><p>Muestra qué tiene la empresa (activos), qué debe (pasivos) y qué es de los dueños (patrimonio).</p><p>Ecuación: Activo = Pasivo + Patrimonio</p>'
+                        },
+                        {
+                            title: '2.2 Estado de Resultados',
+                            content: '<h3>El Estado de Pérdidas y Ganancias</h3><p>Muestra los ingresos, costos, gastos y la ganancia o pérdida del período.</p>'
+                        },
+                        {
+                            title: '2.3 Impuesto sobre la Renta',
+                            content: '<h3>Impacto fiscal en resultados</h3><p>El impuesto sobre la renta es un gasto que reduce la ganancia neta de la empresa.</p>'
+                        },
+                        {
+                            title: '2.4 Ingresos y Gastos sin Movimiento de Efectivo',
+                            content: '<h3>Diferencia entre utilidad y flujo de efectivo</h3><p>La depreciación, amortización y provisiones afectan la utilidad pero no el efectivo.</p>'
+                        },
+                        {
+                            title: '2.5 Estado de Flujo de Efectivo',
+                            content: '<h3>El efectivo es la vida de la empresa</h3><p>Muestra entradas y salidas reales de dinero en actividades operativas, de inversión y financiamiento.</p>'
+                        },
+                        {
+                            title: '2.6 Flujo de Efectivo vs Utilidad Neta',
+                            content: '<h3>¿Por qué una empresa puede ser rentable pero sin dinero?</h3><p>Una empresa puede tener utilidades contables pero problemas de flujo de efectivo.</p>'
+                        }
+                    ]
+                },
+                3: {
+                    title: 'Análisis e Interpretación de Estados',
+                    description: 'Herramientas para analizar y comparar información financiera',
+                    topics: [
+                        {
+                            title: '3.1 Análisis Vertical',
+                            content: '<h3>Análisis dentro de un período</h3><p>Compara cada línea con un total (como porcentaje). Ejemplo: costos como % de ventas.</p>'
+                        },
+                        {
+                            title: '3.2 Análisis Horizontal',
+                            content: '<h3>Análisis entre períodos</h3><p>Compara un período con otro para ver cambios. Ejemplo: crecimiento de ventas año a año.</p>'
+                        },
+                        {
+                            title: '3.3 Razones Financieras',
+                            content: '<h3>Indicadores clave para evaluar salud financiera</h3><p>Razones de liquidez, rentabilidad, eficiencia y endeudamiento.</p>'
+                        },
+                        {
+                            title: '3.4 Método DuPont',
+                            content: '<h3>Descomposición de la rentabilidad</h3><p>ROE = Margen × Rotación × Apalancamiento. Entiende qué impulsa la rentabilidad.</p>'
+                        }
+                    ]
+                },
+                4: {
+                    title: 'Administración del Capital de Trabajo',
+                    description: 'Gestión de activos y pasivos a corto plazo',
+                    topics: [
+                        {
+                            title: '4.1 Administración del Efectivo',
+                            content: '<h3>El recurso más escaso</h3><p>Planificar entradas y salidas de dinero para evitar iliquidez y financiar operaciones.</p>'
+                        },
+                        {
+                            title: '4.2 Relación Rentabilidad-Riesgo',
+                            content: '<h3>El dilema del administrador financiero</h3><p>Mayor rentabilidad generalmente implica mayor riesgo. Balance es clave.</p>'
+                        },
+                        {
+                            title: '4.3 Ciclo de Operación y Ciclo de Efectivo',
+                            content: '<h3>El tiempo del dinero en la empresa</h3><p>Desde invertir en materia prima hasta recibir dinero de clientes. Medido en días.</p>'
+                        },
+                        {
+                            title: '4.4 Políticas de Financiamiento',
+                            content: '<h3>Estrategias de financiamiento a corto plazo</h3><p>Política conservadora, equilibrada o agresiva en el financiamiento del capital de trabajo.</p>'
+                        },
+                        {
+                            title: '4.5 Punto de Equilibrio',
+                            content: '<h3>El nivel mínimo de operación</h3><p>Cantidad de unidades que debe vender para cubrir costos fijos. Punto donde utilidad = 0.</p>'
+                        },
+                        {
+                            title: '4.6 Relación Costo-Volumen-Utilidad',
+                            content: '<h3>Cómo cambia la ganancia con el volumen</h3><p>Análisis "qué pasa si" para entender el impacto de cambios en precio, costo y volumen.</p>'
+                        },
+                        {
+                            title: '4.7 Márgenes de Contribución',
+                            content: '<h3>Lo que cada venta contribuye</h3><p>Margen de contribución = Precio - Costo Variable. Lo que queda para cubrir fijos y ganancia.</p>'
+                        },
+                        {
+                            title: '4.8 Palanca de Operación',
+                            content: '<h3>Amplifícador de ganancias</h3><p>Mide cuánto amplifican los cambios en ventas los cambios en utilidad. Alto con muchos costos fijos.</p>'
+                        }
+                    ]
+                },
+                5: {
+                    title: 'Flujo de Caja y Planeación Financiera',
+                    description: 'Proyección y planificación del futuro financiero',
+                    topics: [
+                        {
+                            title: '5.1 Flujo de Caja Proyectado',
+                            content: '<h3>Predicción del futuro</h3><p>Estimar entradas y salidas de efectivo para los próximos períodos.</p>'
+                        },
+                        {
+                            title: '5.2 Método Porcentaje sobre Ventas',
+                            content: '<h3>Relación entre variables y ventas</h3><p>Si ventas crecen 10%, costos también crecen 10%. Útil para proyecciones rápidas.</p>'
+                        },
+                        {
+                            title: '5.3 Presupuesto de Ventas',
+                            content: '<h3>Proyección de ingresos</h3><p>Base para todos los demás presupuestos. Depende del mercado y estrategia de ventas.</p>'
+                        },
+                        {
+                            title: '5.4 Presupuesto de Caja',
+                            content: '<h3>Planificación del efectivo</h3><p>Detalla cuándo entra y sale dinero. Previene sorpresas de iliquidez.</p>'
+                        },
+                        {
+                            title: '5.5 Estados Financieros Proyectados',
+                            content: '<h3>Estados del futuro</h3><p>Balance, estado de resultados y flujo de caja proyectados. Basados en supuestos y planes.</p>'
+                        },
+                        {
+                            title: '5.6 Estados Proforma',
+                            content: '<h3>Estados "como si"</h3><p>Muestran cómo se vería la situación financiera bajo diferentes escenarios o decisiones.</p>'
+                        }
+                    ]
+                },
+                extra: {
+                    title: 'Profesor Virtual de Fórmulas',
+                    description: 'Domina todas las fórmulas del curso',
+                    topics: [
+                        {
+                            title: 'Activo = Pasivo + Patrimonio',
+                            content: '<h3>La ecuación fundamental</h3><p>Toda la contabilidad se basa en esta ecuación. Siempre debe equilibrarse.</p><p><strong>¿Qué significa?</strong> Todo lo que una empresa posee fue financiado con deuda o dinero de dueños.</p>'
+                        },
+                        {
+                            title: 'Utilidad = Ventas - Costos - Gastos',
+                            content: '<h3>La ganancia</h3><p>Lo que queda después de pagar costos y gastos.</p>'
+                        },
+                        {
+                            title: 'Razón Corriente = Activo Corriente / Pasivo Corriente',
+                            content: '<h3>¿Puede la empresa pagar sus deudas corto plazo?</h3><p>Si es > 1: sí puede. Si es = 1: justo. Si es < 1: tiene problemas.</p>'
+                        },
+                        {
+                            title: 'Margen de Beneficio = Utilidad / Ventas',
+                            content: '<h3>¿Qué tan rentable es?</h3><p>De cada ₡100 vendidos, cuántos son ganancia.</p>'
+                        },
+                        {
+                            title: 'ROA = Utilidad / Activo Total',
+                            content: '<h3>Retorno sobre activos</h3><p>¿Qué tan bien usa la empresa sus activos para generar ganancias?</p>'
+                        },
+                        {
+                            title: 'Punto de Equilibrio = Costos Fijos / Margen de Contribución',
+                            content: '<h3>¿Cuánto vender para no quebrar?</h3><p>Punto donde utilidad = 0.</p>'
+                        }
+                    ]
+                }
+            },
+
+            // Inicializar aplicación
+            init() {
+                this.setupTheme();
+                this.setupEventListeners();
+                console.log('✅ Aplicación inicializada correctamente');
+            },
+
+            // Configurar tema
+            setupTheme() {
+                document.documentElement.setAttribute('data-theme', this.state.theme);
+                const toggle = document.getElementById('themeToggle');
+                if (toggle) {
+                    toggle.checked = this.state.theme === 'light';
+                }
+            },
+
+            // Event listeners
+            setupEventListeners() {
+                // Navegación sidebar
+                document.querySelectorAll('[data-view]').forEach(item => {
+                    item.addEventListener('click', (e) => {
+                        this.switchView(item.dataset.view);
+                        this.updateActiveNav(item);
+                    });
+                });
+
+                // Unidades en sidebar
+                document.querySelectorAll('[data-unit]').forEach(item => {
+                    item.addEventListener('click', (e) => {
+                        const unit = item.dataset.unit;
+                        this.switchView('learning');
+                        this.loadUnit(unit);
+                        this.updateActiveNav(item);
+                    });
+                });
+
+                // Unidades en grid dashboard
+                document.querySelectorAll('.unit-card').forEach(card => {
+                    card.addEventListener('click', () => {
+                        const unit = card.dataset.unit;
+                        this.switchView('learning');
+                        this.loadUnit(unit);
+                    });
+                });
+
+                // Botón back
+                document.querySelector('.back-button').addEventListener('click', () => {
+                    this.switchView('dashboard');
+                    const dashboardNav = document.querySelector('[data-view="dashboard"]');
+                    if (dashboardNav) this.updateActiveNav(dashboardNav);
+                });
+
+                // Theme toggle
+                document.getElementById('themeToggle').addEventListener('change', (e) => {
+                    this.state.theme = e.target.checked ? 'light' : 'dark';
+                    localStorage.setItem('theme', this.state.theme);
+                    this.setupTheme();
+                });
+
+                // Search
+                document.querySelector('.search-box').addEventListener('input', (e) => {
+                    this.search(e.target.value);
+                });
+            },
+
+            // Cambiar vista
+            switchView(viewName) {
+                // Ocultar todas las vistas
+                document.querySelectorAll('.view').forEach(v => v.style.display = 'none');
+                
+                // Mostrar vista seleccionada
+                const viewId = viewName.charAt(0).toUpperCase() + viewName.slice(1) + 'View';
+                const view = document.getElementById(viewId);
+                if (view) {
+                    view.style.display = 'block';
+                    view.classList.add('animate-in');
+                }
+                
+                this.state.currentView = viewName;
+            },
+
+            // Cargar unidad
+            loadUnit(unitNum) {
+                const unit = this.units[unitNum];
+                if (!unit) return;
+
+                const container = document.getElementById('unitDetail');
+                const backBtn = document.querySelector('.back-button');
+                
+                let html = `
+                    <div class="unit-header">
+                        <h1>${unit.title}</h1>
+                        <p>${unit.description}</p>
+                    </div>
+                    <div class="topics-container">
+                `;
+
+                unit.topics.forEach((topic, index) => {
+                    html += `
+                        <div class="topic-item">
+                            <div class="topic-header">
+                                <span class="topic-title">${topic.title}</span>
+                                <span class="topic-toggle">▼</span>
+                            </div>
+                            <div class="topic-content">
+                                <div class="topic-body">
+                                    ${topic.content}
+                                    <button class="btn-primary">Continuar Aprendiendo</button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                html += `</div>`;
+                container.innerHTML = html;
+
+                // Agregar interactividad a los temas
+                document.querySelectorAll('.topic-item').forEach(item => {
+                    item.querySelector('.topic-header').addEventListener('click', () => {
+                        item.classList.toggle('open');
+                    });
+                });
+
+                this.state.currentUnit = unitNum;
+            },
+
+            // Actualizar nav activo
+            updateActiveNav(item) {
+                document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+                item.classList.add('active');
+            },
+
+            // Búsqueda
+            search(query) {
+                console.log('Buscando:', query);
+                // Implementación de búsqueda en fase 2
+            }
+        };
+
+        // Inicializar al cargar la página
+        document.addEventListener('DOMContentLoaded', () => {
+            app.init();
+        });
+    </script>
+</body>
+</html>
