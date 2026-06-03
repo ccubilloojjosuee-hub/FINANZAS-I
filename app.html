@@ -579,6 +579,10 @@
                     <span class="nav-icon">🧠</span>
                     Profesor Virtual
                 </div>
+                <div class="nav-item" data-view="exercises">
+                    <span class="nav-icon">✏️</span>
+                    Ejercicios
+                </div>
 
                 <div class="nav-section">Unidades</div>
                 <div class="nav-item" data-unit="1">
@@ -755,6 +759,15 @@
                     </div>
 
                     <div id="formulasContent"></div>
+                </div>
+
+                <!-- EXERCISES VIEW -->
+                <div id="exercisesView" class="view">
+                    <div class="dashboard-header">
+                        <h1>✏️ Ejercicios Prácticos</h1>
+                        <p>Problemas resueltos con explicaciones paso a paso</p>
+                    </div>
+                    <div id="exercisesContent"></div>
                 </div>
             </div>
         </div>
@@ -1390,12 +1403,159 @@
                 }
             ],
 
+            // EJERCICIOS CON SOLUCIONES
+            exercises: [
+                {
+                    unit: 1,
+                    difficulty: 'básico',
+                    question: '¿Cuál es la diferencia fundamental entre una empresa individual y una Sociedad Anónima en términos financieros?',
+                    solution: `La principal diferencia es la <strong>responsabilidad sobre deudas</strong>:
+                    <ul>
+                        <li><strong>Empresa Individual:</strong> El dueño tiene responsabilidad ILIMITADA. Si la empresa debe ₡50M y solo tiene ₡20M, el dueño debe pagar los ₡30M restantes con su patrimonio personal.</li>
+                        <li><strong>Sociedad Anónima:</strong> Los accionistas tienen responsabilidad LIMITADA. Solo pierden lo que invirtieron. Si la empresa quiebra, el accionista no pierde más que su inversión inicial.</li>
+                    </ul>
+                    <strong>Implicación financiera:</strong> Las S.A. pueden acceder a créditos más fácilmente porque los bancos saben que pueden controlar el riesgo.`
+                },
+                {
+                    unit: 1,
+                    difficulty: 'intermedio',
+                    question: 'Una empresa tiene que elegir entre: (A) Invertir ₡100M en Mercado del Dinero a 4% anual, o (B) Invertir ₡100M en acciones con riesgo alto pero retorno esperado de 15%. ¿Cuál debería elegir y por qué?',
+                    solution: `No hay una respuesta única. Depende de:
+                    <br><br>
+                    <strong>Opción A (Mercado del Dinero):</strong>
+                    <ul>
+                        <li>✅ Seguro: Ganancia garantizada de ₡4M/año</li>
+                        <li>✅ Acceso rápido al dinero (líquido)</li>
+                        <li>❌ Retorno muy bajo</li>
+                    </ul>
+                    <br>
+                    <strong>Opción B (Mercado de Capitales):</strong>
+                    <ul>
+                        <li>✅ Retorno alto: ₡15M/año esperados</li>
+                        <li>❌ Riesgoso: Podría perder dinero si mercado cae</li>
+                        <li>❌ Dinero atrapado en acciones</li>
+                    </ul>
+                    <br>
+                    <strong>Decisión correcta:</strong> Depende de los objetivos de la empresa:
+                    <ul>
+                        <li>Si necesita dinero en corto plazo → Opción A</li>
+                        <li>Si puede esperar 5+ años y tolera riesgo → Opción B</li>
+                        <li>Lo ideal: Mezcla de ambas (diversificar)</li>
+                    </ul>`
+                },
+                {
+                    unit: 2,
+                    difficulty: 'básico',
+                    question: 'Completa el Balance General de "TechStart S.A.":\n\nActivos:\n- Caja: ₡50,000\n- Cuentas por cobrar: ₡80,000\n- Máquinas: ₡200,000\n- TOTAL ACTIVOS: ???\n\nPasivos:\n- Cuentas por pagar: ₡60,000\n- Préstamo bancario: ₡150,000\n\nPatrimonio:\n- Capital: ₡200,000\n- Ganancias retenidas: ???\n\n¿Cuál es el Total de Pasivos + Patrimonio?',
+                    solution: `<strong>Paso 1: Calcular Total de Activos</strong>
+                    <div class="formula-box">
+                        Total Activos = ₡50,000 + ₡80,000 + ₡200,000 = <strong>₡330,000</strong>
+                    </div>
+                    
+                    <strong>Paso 2: Calcular Total de Pasivos</strong>
+                    <div class="formula-box">
+                        Total Pasivos = ₡60,000 + ₡150,000 = <strong>₡210,000</strong>
+                    </div>
+                    
+                    <strong>Paso 3: Usar la ecuación fundamental</strong>
+                    <div class="formula-box">
+                        ACTIVOS = PASIVOS + PATRIMONIO<br>
+                        ₡330,000 = ₡210,000 + PATRIMONIO<br>
+                        PATRIMONIO = ₡330,000 - ₡210,000 = <strong>₡120,000</strong>
+                    </div>
+                    
+                    <strong>Paso 4: Calcular Ganancias Retenidas</strong>
+                    <div class="formula-box">
+                        Patrimonio = Capital + Ganancias Retenidas<br>
+                        ₡120,000 = ₡200,000 + Ganancias Retenidas<br>
+                        Ganancias Retenidas = ₡120,000 - ₡200,000 = <strong>-₡80,000</strong>
+                    </div>
+                    
+                    <strong>⚠️ Interpretación:</strong> Las ganancias retenidas son negativas. Esto significa que la empresa ha acumulado pérdidas o ha distribuido más dividendos de lo que ha ganado. ¡Necesita mejorar su rentabilidad!`
+                },
+                {
+                    unit: 2,
+                    difficulty: 'intermedio',
+                    question: 'La empresa "MegaCafé" tiene el siguiente Estado de Resultados:\n\nVentas: ₡1,000,000\nCosto de Ventas: ₡600,000\nGastos Operacionales: ₡250,000\nIntereses pagados: ₡30,000\nImpuesto sobre renta (25%): ???\n\nCalcula:\n1. Margen Bruto\n2. Ganancia Operacional\n3. Ganancia antes de impuestos\n4. Impuesto sobre renta\n5. Utilidad Neta\n6. Margen Neto (%)',
+                    solution: `<strong>1. Margen Bruto</strong>
+                    <div class="formula-box">
+                        = Ventas - Costo de Ventas<br>
+                        = ₡1,000,000 - ₡600,000<br>
+                        = <strong>₡400,000</strong>
+                    </div>
+                    
+                    <strong>2. Ganancia Operacional</strong>
+                    <div class="formula-box">
+                        = Margen Bruto - Gastos Operacionales<br>
+                        = ₡400,000 - ₡250,000<br>
+                        = <strong>₡150,000</strong>
+                    </div>
+                    
+                    <strong>3. Ganancia Antes de Impuestos</strong>
+                    <div class="formula-box">
+                        = Ganancia Operacional - Intereses<br>
+                        = ₡150,000 - ₡30,000<br>
+                        = <strong>₡120,000</strong>
+                    </div>
+                    
+                    <strong>4. Impuesto Sobre Renta</strong>
+                    <div class="formula-box">
+                        = ₡120,000 × 25% = <strong>₡30,000</strong>
+                    </div>
+                    
+                    <strong>5. Utilidad Neta</strong>
+                    <div class="formula-box">
+                        = Ganancia Antes de Impuestos - Impuestos<br>
+                        = ₡120,000 - ₡30,000<br>
+                        = <strong>₡90,000</strong>
+                    </div>
+                    
+                    <strong>6. Margen Neto</strong>
+                    <div class="formula-box">
+                        = (Utilidad Neta ÷ Ventas) × 100<br>
+                        = (₡90,000 ÷ ₡1,000,000) × 100<br>
+                        = <strong>9%</strong>
+                    </div>
+                    
+                    <strong>📊 Análisis:</strong> De cada ₡100 vendidos, la empresa gana ₡9 netos. Es una ganancia modesta pero razonable. El margen bruto de 40% es bueno, pero los gastos operacionales (25% de ventas) son altos.`
+                },
+                {
+                    unit: 2,
+                    difficulty: 'avanzado',
+                    question: 'Se presenta información de dos empresas de software. Analiza cuál es más saludable financieramente:\n\n<strong>Empresa A "FastCode":</strong>\nActivos: ₡500M | Pasivos: ₡400M | Patrimonio: ₡100M\nVentas anuales: ₡300M | Utilidad Neta: ₡15M\n\n<strong>Empresa B "SlowTech":</strong>\nActivos: ₡200M | Pasivos: ₡50M | Patrimonio: ₡150M\nVentas anuales: ₡100M | Utilidad Neta: ₡12M\n\nCompara usando 3 indicadores diferentes.',
+                    solution: `<strong>1. SOLVENCIA (Razón de Endeudamiento)</strong>
+                    <div class="formula-box">
+                        FastCode: (400M ÷ 500M) × 100 = <strong>80%</strong> (muy endeudada)<br>
+                        SlowTech: (50M ÷ 200M) × 100 = <strong>25%</strong> (poco endeudada)
+                    </div>
+                    <p>✅ <strong>Ganadora: SlowTech</strong> - Tiene mucho menos riesgo de insolvencia.</p>
+                    
+                    <strong>2. RENTABILIDAD (ROA)</strong>
+                    <div class="formula-box">
+                        FastCode: (15M ÷ 500M) × 100 = <strong>3%</strong><br>
+                        SlowTech: (12M ÷ 200M) × 100 = <strong>6%</strong>
+                    </div>
+                    <p>✅ <strong>Ganadora: SlowTech</strong> - Genera más ganancia por peso de activo.</p>
+                    
+                    <strong>3. MARGEN DE GANANCIA</strong>
+                    <div class="formula-box">
+                        FastCode: (15M ÷ 300M) × 100 = <strong>5%</strong><br>
+                        SlowTech: (12M ÷ 100M) × 100 = <strong>12%</strong>
+                    </div>
+                    <p>✅ <strong>Ganadora: SlowTech</strong> - Ganancia mucho más alta por venta.</p>
+                    
+                    <strong>🏆 CONCLUSIÓN: SlowTech es financieramente más saludable</strong>
+                    <p>FastCode está sobre-endeudada (80% deuda) buscando crecer, pero sus márgenes son bajos. Si el mercado se desacelera, podría tener problemas. SlowTech es más segura, más rentable, y puede crecer con menos riesgo.</p>`
+                }
+            ],
+
             // INICIALIZAR
             init() {
                 this.setupTheme();
                 this.setupEventListeners();
                 this.loadCalculators();
                 this.loadFormulas();
+                this.loadExercises();
             },
 
             setupTheme() {
@@ -1542,6 +1702,58 @@
 
                 html += '</div>';
                 container.innerHTML = html;
+            },
+
+            loadExercises() {
+                const container = document.getElementById('exercisesContent');
+                const difficulties = ['básico', 'intermedio', 'avanzado'];
+                let html = '<div style="display: grid; gap: 20px;">';
+
+                difficulties.forEach(diff => {
+                    const exercises = this.exercises.filter(e => e.difficulty === diff);
+                    if (exercises.length > 0) {
+                        html += `<div class="learning-section">
+                            <h2 style="color: ${diff === 'básico' ? '#00c896' : diff === 'intermedio' ? '#f5a623' : '#ff6b6b'}">${diff.charAt(0).toUpperCase() + diff.slice(1)}</h2>
+                            <div style="display: grid; gap: 16px;">`;
+
+                        exercises.forEach((ex, idx) => {
+                            const diffLabel = diff === 'básico' ? '⭐' : diff === 'intermedio' ? '⭐⭐' : '⭐⭐⭐';
+                            html += `
+                                <div style="border: 1px solid var(--border); border-radius: 10px; overflow: hidden;">
+                                    <div style="background: var(--surface-light); padding: 16px; cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="document.getElementById('ex${diff}${idx}').classList.toggle('hidden')">
+                                        <div>
+                                            <strong>Unidad ${ex.unit}</strong> - ${diffLabel}
+                                            <p style="margin: 8px 0 0 0; color: var(--text-secondary); font-size: 14px;">${ex.question.substring(0, 80)}...</p>
+                                        </div>
+                                        <span style="font-size: 20px; transition: var(--transition);" class="toggle-icon">▼</span>
+                                    </div>
+                                    <div id="ex${diff}${idx}" class="hidden" style="padding: 20px; background: var(--surface); border-top: 1px solid var(--border); display: none;">
+                                        <h3 style="margin-bottom: 16px; color: var(--primary);">Pregunta:</h3>
+                                        <p style="white-space: pre-wrap; margin-bottom: 24px;">${ex.question}</p>
+                                        <h3 style="margin-bottom: 16px; color: var(--primary);">Solución:</h3>
+                                        <div style="background: var(--bg-dark); padding: 16px; border-radius: 8px;">${ex.solution}</div>
+                                    </div>
+                                </div>
+                            `;
+                        });
+
+                        html += '</div></div>';
+                    }
+                });
+
+                html += '</div>';
+                container.innerHTML = html;
+
+                // Agregar funcionalidad de toggle
+                document.querySelectorAll('[onclick*="classList.toggle"]').forEach(el => {
+                    el.addEventListener('click', function(e) {
+                        const targetId = this.getAttribute('onclick').match(/getElementById\('([^']+)'\)/)[1];
+                        const target = document.getElementById(targetId);
+                        target.style.display = target.style.display === 'none' ? 'block' : 'none';
+                        const icon = this.querySelector('.toggle-icon');
+                        if (icon) icon.style.transform = target.style.display === 'none' ? 'rotate(0deg)' : 'rotate(180deg)';
+                    });
+                });
             },
 
             calculate(calcIdx) {
